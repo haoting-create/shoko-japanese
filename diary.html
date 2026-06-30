@@ -1,161 +1,22 @@
-<!doctype html>
-<html lang='zh-Hant'>
+<!doctype html><html lang='zh-Hant'>
 <head>
 <meta charset='utf-8'>
 <meta name='viewport' content='width=device-width,initial-scale=1'>
-<title>浩婷每日中文心得目錄</title>
-<style>
-/* 🍦 夢幻馬卡龍漸層底色 */
-body {
-    font-family: "Noto Sans TC", sans-serif;
-    background: linear-gradient(135deg, #fff0f5 0%, #e6f2ff 100%);
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    color: #4a4a4a;
-}
-.wrap {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-}
-/* 🌟 可愛雲朵回首頁按鈕 */
-.back-btn {
-    display: inline-block;
-    text-decoration: none;
-    color: #ff6b8b;
-    font-weight: bold;
-    background: #ffffff;
-    padding: 10px 22px;
-    border-radius: 30px;
-    border: 3px dashed #ffb6c1;
-    box-shadow: 0 4px 10px rgba(255,182,193,0.2);
-    transition: all 0.3s ease;
-}
-.back-btn:hover {
-    background: #fff0f2;
-    transform: scale(1.05) rotate(-2deg);
-}
-/* 🎀 主標題設計：滿滿可愛裝飾 */
-h1 {
-    color: #d16276;
-    font-size: 2.4em;
-    text-align: center;
-    margin: 35px 0;
-    text-shadow: 2px 2px 0px #ffffff;
-}
-h1 span {
-    display: inline-block;
-    animation: jelly 2s infinite;
-}
-@keyframes jelly {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-}
-
-/* 卡片列表容器 */
-.card-list {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-    margin-top: 30px;
-}
-/* 🎨 馬卡龍基本卡片樣式 */
-.diary-card {
-    display: block;
-    text-decoration: none;
-    background: #ffffff;
-    border-radius: 24px;
-    padding: 25px 30px;
-    box-shadow: 0 8px 16px rgba(180, 180, 180, 0.15);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 超可愛彈跳特效 */
-    position: relative;
-    border: 3px solid transparent;
-}
-/* 滑鼠移過去的「啵」彈跳放大 */
-.diary-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 25px rgba(255, 182, 193, 0.4);
-}
-
-/* 🍓 草莓馬卡龍粉紅卡片（最新一篇文章） */
-.card-pink {
-    background: #fff0f3;
-    border-color: #ffb6c1;
-}
-.card-pink .card-title { color: #d16276; }
-.card-pink .card-date { background: #ffcbd3; color: #fff; }
-
-/* 🫐 藍莓馬卡龍粉藍卡片（第一篇文章） */
-.card-blue {
-    background: #f0f7ff;
-    border-color: #b3d7ff;
-}
-.card-blue .card-title { color: #2b6cb0; }
-.card-blue .card-date { background: #bee3f8; color: #2b6cb0; }
-
-/* 🎈 NEW 亮晶晶小貼紙 */
-.diary-card.latest::after {
-    content: "NEW ✨";
-    position: absolute;
-    top: -12px;
-    right: 25px;
-    background: linear-gradient(90deg, #ff6b8b, #ff8da1);
-    color: white;
-    font-size: 0.85em;
-    font-weight: bold;
-    padding: 6px 14px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(255, 107, 139, 0.3);
-}
-/* 卡片內可愛日期膠囊 */
-.card-date {
-    display: inline-block;
-    font-size: 0.85em;
-    padding: 4px 12px;
-    border-radius: 12px;
-    margin: 0 0 12px 0;
-    font-weight: bold;
-}
-/* 卡片內標題樣式 */
-.card-title {
-    font-size: 1.35em;
-    margin: 0;
-    font-weight: bold;
-    line-height: 1.5;
-}
-/* 裝飾小文字 */
-.card-deco {
-    float: right;
-    font-size: 1.5em;
-}
-</style>
+<link rel='stylesheet' href='style.css'>
+<title>中文心得列表</title>
 </head>
-<body>
+<body style="font-family:'Noto Sans TC';max-width:900px;margin:40px auto;padding:20px;line-height:1.8;background:#fffaf5;">
+<p><a href='index.html' style="text-decoration:none;color:#ff8da1;font-weight:bold;">← 回首頁</a></p>
+<h1 style="color:#d16276;border-bottom:2px solid #ffe4e1;padding-bottom:10px;">浩婷每日中文心得</h1>
 
-<div class='wrap'>
-    <p style="text-align: center;"><a href='index.html' class="back-btn">🧸 🌟 回首頁入口 🌟 🧸</a></p>
-    
-    <h1><span>🎀 浩婷每日中文心得 🎀</span></h1>
-    
-    <div class="card-list">
-        
-        <!-- 🍓 【卡片 2】：草莓馬卡龍粉紅卡片 -->
-        <a href='diary002.html' class='diary-card card-pink latest'>
-            <span class="card-deco">🧸</span>
-            <div class='card-date'>📅 2026/06/22</div>
-            <p class='card-title'>📝 檢查自己心中的那把尺到底準不準</p>
-        </a>
-        
-        <!-- 🫐 【卡片 1】：藍莓馬卡龍粉藍卡片 -->
-        <a href='diary001.html' class='diary-card card-blue'>
-            <span class="card-deco">🎉</span>
-            <div class='card-date'>📅 2026/06/21</div>
-            <p class='card-title'>📝 我的新發現！AI 營養師到我家報到啦！</p>
-        </a>
-        
-    </div>
-</div>
+<!-- 最新文章放最上面，全都改好了有溫度的正式標題 -->
+<p style="font-size:1.15em;"><a href='diary007.html' style="text-decoration:none;color:#4a4a4a;">📝 2026/06/27｜兩場志工任務與生命改變的無價答案</a></p>
+<p style="font-size:1.15em;"><a href='diary006.html' style="text-decoration:none;color:#777;">📝 2026/06/26｜生活即是最好的教材，忙碌中依舊保有覺察</a></p>
+<p style="font-size:1.15em;"><a href='diary005.html' style="text-decoration:none;color:#777;">📝 2026/06/25｜放慢步伐看更遠，謝謝每天努力不懈的自己</a></p>
+<p style="font-size:1.15em;"><a href='diary004.html' style="text-decoration:none;color:#777;">📝 2026/06/24｜在浮躁中踩下煞車，感謝善知識的清涼風</a></p>
+<p style="font-size:1.15em;"><a href='diary003.html' style="text-decoration:none;color:#777;">📝 2026/06/23｜修煉即修心，離苦即得樂</a></p>
+<p style="font-size:1.15em;"><a href='diary002.html' style="text-decoration:none;color:#777;">📝 2026/06/22｜檢查自己心中的那把尺到底準不準</a></p>
+<p style="font-size:1.15em;"><a href='diary001.html' style="text-decoration:none;color:#777;">📝 2026/06/21｜我的新發現！AI 營養師到我家報到啦！</a></p>
 
 </body>
 </html>

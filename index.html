@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="style.css">
 <style>
 /* ==========================================
-   全新頂部超大 Logo 主視覺排版 (Hero Logo V4)
+   全新頂部超大 Logo 主視覺排版 (Hero Logo V5)
 ========================================== */
 
 .hero.hero-v21 {
@@ -18,11 +18,11 @@
   margin-bottom: 40px;
 }
 
-/* 讓您的全新 Logo 區塊變成最上方、最吸睛的巨幅主角 */
+/* 讓您的全新 Logo 區塊變成最上方、最大器的震撼主角 */
 .hero-v21 .hero-logo.hero-logo-large {
   width: 100%;
   min-height: auto;
-  padding: 40px 0; /* 加大上下留白，讓 Logo 看起來極度有質感 */
+  padding: 50px 0; /* 加大上下留白，讓大圖更有呼吸感 */
   background: #ffffff;
   border-radius: 24px;
   box-shadow: 0 10px 30px rgba(63,42,36,0.03);
@@ -34,13 +34,13 @@
 
 .hero-logo-large img {
   width: 100%;
-  max-width: 550px; /* 關鍵：將修過圖的 Logo 橫寬放大到 550 像素，非常大器 */
+  max-width: 700px; /* 【關鍵調整】將修過圖的 Logo 再放大到 700 像素，震撼力十足！ */
   height: auto;
   max-height: none;
   object-fit: contain;
 }
 
-/* 核心文案移到巨幅 Logo 正下方，居中對齊，非常有品牌首頁的氣勢 */
+/* 核心文案移到巨幅 Logo 正下方，置中對齊 */
 .hero-v21 .hero-left {
   width: 100%;
   text-align: center;
@@ -60,21 +60,32 @@
   margin: 0 auto 20px;
 }
 
-/* 三個正能量圓圈標籤在中央漂亮排開 */
+/* 【完美修正】讓三個小標籤橫向排開、優雅居中，絕不變大板磚 */
 .feature-list {
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
+  display: flex;
+  flex-direction: row;      /* 強制橫向排列 */
+  justify-content: center;  /* 水平方向完全居中 */
+  align-items: center;      /* 垂直方向置中 */
+  flex-wrap: wrap;          /* 手機版寬度不夠時自動優雅折行 */
+  gap: 12px;                /* 三個標籤之間的黃金間距 */
+  margin: 26px auto 0;
+  width: 100%;
+  max-width: 700px;         
 }
 
 .feature-list div {
   background: #fff7ed;
   border: 1px solid #f5d5c7;
-  border-radius: 999px;
-  padding: 10px 20px;
+  border-radius: 999px;     /* 完美的長橢圓膠囊型 */
+  padding: 10px 20px;       /* 精緻小巧的襯距 */
   font-weight: 1000;
   color: #7b4c36;
-  box-shadow: 0 4px 12px rgba(63,42,36,0.03);
+  box-shadow: 0 6px 14px rgba(63,42,36,0.04);
+  display: inline-flex;     /* 讓小圖標與文字完美黏在一起 */
+  align-items: center;
+  justify-content: center;
+  gap: 6px;                 
+  width: auto !important;   /* 強制拔除大板磚寬度，隨文字長短自動縮放 */
 }
 
 .hero-note {
@@ -97,17 +108,17 @@
     <a class="home-link" href="about.html">🌸 關於網站</a>
   </header>
 
-  <!-- 上下對調、Logo 放大排第一順位的全新 Hero 區塊 -->
+  <!-- 上下對調、Logo 再放大的全新 Hero 區塊 -->
   <section class="hero hero-v21">
     
-    <!-- 第一順位：妳最滿意的全新修圖 Logo 放大排在最上面中央 -->
+    <!-- 第一順位：妳修過圖的超大 Logo 佔滿頂端 -->
     <div class="hero-logo hero-logo-large">
       <img src="shoko-logo.png" alt="ショコさん日本語教室 Online Logo">
       <p class="logo-slogan">毎日少しずつ、いっしょに上手になろう。😊</p>
       <p class="logo-slogan-zh">每天 15 分鐘，陪你把日文變成生活。</p>
     </div>
 
-    <!-- 第二順位：學習問候語文案文雅地跟在巨幅 Logo 下方 -->
+    <!-- 第二順位：文案優雅居中跟在下方 -->
     <div class="hero-left">
       <span class="kicker">🌸 Learning Entrance</span>
       <h1>今天，你想怎麼學？</h1>

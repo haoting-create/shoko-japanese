@@ -7,90 +7,135 @@
 <link rel="stylesheet" href="style.css">
 <style>
 /* ==========================================
-   全新頂部超大 Logo 主視覺排版 (Hero Logo V5)
+   全新重新規劃：黃金比例大雙欄主視覺 (Hero V6)
 ========================================== */
 
 .hero.hero-v21 {
-  display: flex;
-  flex-direction: column; /* 強制改為上下排版 */
-  min-height: auto;
-  padding: 0;
-  margin-bottom: 40px;
+  display: grid !important;
+  grid-template-columns: 1.1fr 0.9fr !important; /* 左邊文字寬一點，右邊大圖等寬並排 */
+  gap: 40px !important;
+  align-items: center !important;
+  min-height: 520px !important;
+  background: #ffffff !important;
+  border-radius: 32px !important;
+  padding: 40px !important;
+  box-shadow: 0 10px 30px rgba(63,42,36,0.02) !important;
+  margin-bottom: 50px !important;
+  box-sizing: border-box !important;
 }
 
-/* 讓您的全新 Logo 區塊變成最上方、最大器的震撼主角 */
-.hero-v21 .hero-logo.hero-logo-large {
-  width: 100%;
-  min-height: auto;
-  padding: 50px 0; /* 加大上下留白，讓大圖更有呼吸感 */
-  background: #ffffff;
-  border-radius: 24px;
-  box-shadow: 0 10px 30px rgba(63,42,36,0.03);
-  margin-bottom: 35px; /* 與下方文案的黃金比例間距 */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.hero-logo-large img {
-  width: 100%;
-  max-width: 700px; /* 【關鍵調整】將修過圖的 Logo 再放大到 700 像素，震撼力十足！ */
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-}
-
-/* 核心文案移到巨幅 Logo 正下方，置中對齊 */
+/* 左側文字與標籤區塊 */
 .hero-v21 .hero-left {
-  width: 100%;
-  text-align: center;
-  padding: 0;
+  text-align: left !important; /* 歐美頂級雜誌風：一律靠左對齊，極具知性美 */
+  padding: 0 !important;
+  width: 100% !important;
 }
 
 .hero-v21 h1 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-  color: #3f2a24;
+  font-size: 2.5rem !important; /* 讓大標題更有力量 */
+  color: #3f2a24 !important;
+  margin-top: 0 !important;
+  margin-bottom: 18px !important;
+  font-weight: 1000 !important;
 }
 
 .hero-v21 .lead {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  max-width: 700px;
-  margin: 0 auto 20px;
+  font-size: 1.15rem !important;
+  line-height: 1.8 !important;
+  color: #5a453d !important;
+  margin-bottom: 25px !important;
 }
 
-/* 【完美修正】讓三個小標籤橫向排開、優雅居中，絕不變大板磚 */
+/* 三個精緻小膠囊標籤：優雅地在文字下方一字排開 */
 .feature-list {
-  display: flex;
-  flex-direction: row;      /* 強制橫向排列 */
-  justify-content: center;  /* 水平方向完全居中 */
-  align-items: center;      /* 垂直方向置中 */
-  flex-wrap: wrap;          /* 手機版寬度不夠時自動優雅折行 */
-  gap: 12px;                /* 三個標籤之間的黃金間距 */
-  margin: 26px auto 0;
-  width: 100%;
-  max-width: 700px;         
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important; /* 靠左看齊，完美融入排版 */
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin: 0 0 25px 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
 }
 
 .feature-list div {
-  background: #fff7ed;
-  border: 1px solid #f5d5c7;
-  border-radius: 999px;     /* 完美的長橢圓膠囊型 */
-  padding: 10px 20px;       /* 精緻小巧的襯距 */
-  font-weight: 1000;
-  color: #7b4c36;
-  box-shadow: 0 6px 14px rgba(63,42,36,0.04);
-  display: inline-flex;     /* 讓小圖標與文字完美黏在一起 */
-  align-items: center;
-  justify-content: center;
-  gap: 6px;                 
-  width: auto !important;   /* 強制拔除大板磚寬度，隨文字長短自動縮放 */
+  width: auto !important; /* 徹底消除板磚 */
+  background: #fff7ed !important;
+  border: 1px solid #f5d5c7 !important;
+  border-radius: 999px !important;
+  padding: 8px 16px !important;
+  font-weight: bold !important;
+  color: #7b4c36 !important;
+  font-size: 14px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  box-shadow: 0 4px 10px rgba(63,42,36,0.03) !important;
 }
 
 .hero-note {
-  margin: 25px auto 0;
-  max-width: 600px;
+  font-size: 0.9rem !important;
+  color: #9a8277 !important;
+  border-left: 3px solid #ff8da1 !important; /* 粉紅色質感提示線 */
+  padding-left: 12px !important;
+  text-align: left !important;
+  margin: 0 !important;
+}
+
+/* 右側全新巨幅修圖 Logo 區塊 */
+.hero-v21 .hero-logo.hero-logo-large {
+  width: 100% !important;
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.hero-logo-large img {
+  width: 100% !important;
+  max-width: 460px !important; /* 黃金比例大圖 */
+  height: auto !important;
+  object-fit: contain !important;
+}
+
+.logo-slogan {
+  margin: 15px 0 4px 0 !important;
+  font-size: 1.05rem !important;
+  font-weight: bold !important;
+  color: #7b4c36 !important;
+}
+.logo-slogan-zh {
+  margin: 0 !important;
+  font-size: 0.9rem !important;
+  color: #9a8277 !important;
+}
+
+/* ==========================================
+   手機版響應式優化（900px以下自動切換）
+========================================== */
+@media(max-width:900px){
+  .hero.hero-v21 {
+    grid-template-columns: 1fr !important; /* 手機版變成單欄 */
+    padding: 30px 20px !important;
+    gap: 30px !important;
+  }
+  .hero-v21 .hero-logo.hero-logo-large {
+    order: -1 !important; /* 關鍵：手機版讓精美大圖排到最上面 */
+  }
+  .hero-v21 .hero-left, .hero-note {
+    text-align: center !important; /* 手機版改為溫馨居中 */
+  }
+  .hero-note {
+    border-left: none !important;
+    padding-left: 0 !important;
+  }
+  .feature-list {
+    justify-content: center !important; /* 標籤手機版居中 */
+  }
 }
 </style>
 </head>
@@ -108,25 +153,19 @@
     <a class="home-link" href="about.html">🌸 關於網站</a>
   </header>
 
-  <!-- 上下對調、Logo 再放大的全新 Hero 區塊 -->
+  <!-- 全新設計：左文字、右大圖的黃金雙欄 Hero 區塊 -->
   <section class="hero hero-v21">
     
-    <!-- 第一順位：妳修過圖的超大 Logo 佔滿頂端 -->
-    <div class="hero-logo hero-logo-large">
-      <img src="shoko-logo.png" alt="ショコさん日本語教室 Online Logo">
-      <p class="logo-slogan">毎日少しずつ、いっしょに上手になろう。😊</p>
-      <p class="logo-slogan-zh">每天 15 分鐘，陪你把日文變成生活。</p>
-    </div>
-
-    <!-- 第二順位：文案優雅居中跟在下方 -->
+    <!-- 左側：知性優雅文案區 -->
     <div class="hero-left">
-      <span class="kicker">🌸 Learning Entrance</span>
+      <span class="kicker" style="color: #ff8da1; font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; display: block; margin-bottom: 8px;">🌸 Learning Entrance</span>
       <h1>今天，你想怎麼學？</h1>
       <p class="lead">
         讓每一天的真實生活，成為最自然的日文教材。<br>
         跟著浩婷さん的心得，和ショコさん一起學會日本人真正會說的日文。
       </p>
 
+      <!-- 精緻小巧的橫排膠囊標籤 -->
       <div class="feature-list">
         <div>🌸 真實生活日文</div>
         <div>☕ 每天一點點</div>
@@ -136,6 +175,13 @@
       <div class="hero-note">
         首頁是學習入口。真正的課程、心得、知識庫與跟讀練習，都從下面的卡片進入。
       </div>
+    </div>
+
+    <!-- 右側：修過圖的精美大 Logo 主視覺 -->
+    <div class="hero-logo hero-logo-large">
+      <img src="shoko-logo.png" alt="ショコさん日本語教室 Online Logo">
+      <p class="logo-slogan">毎日少しずつ、いっしょに上手になろう。😊</p>
+      <p class="logo-slogan-zh">每天 15 分鐘，陪你把日文變成生活。</p>
     </div>
 
   </section>

@@ -5,6 +5,87 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ショコさん日本語教室 Online</title>
 <link rel="stylesheet" href="style.css">
+<style>
+/* =========================
+   Home Hero V2.1
+   只修改首頁第一屏入口
+========================= */
+
+.hero.hero-v21{
+  min-height:660px;
+  grid-template-columns:.9fr 1.1fr;
+  align-items:center;
+}
+
+.hero-v21 .hero-left{
+  padding:18px 0;
+}
+
+.hero-v21 h1{
+  margin-bottom:20px;
+}
+
+.feature-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:26px;
+}
+
+.feature-list div{
+  background:#fff7ed;
+  border:1px solid #f5d5c7;
+  border-radius:999px;
+  padding:10px 16px;
+  font-weight:1000;
+  color:#7b4c36;
+  box-shadow:0 8px 18px rgba(63,42,36,.05);
+}
+
+.hero-logo.hero-logo-large{
+  min-height:510px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+}
+
+.hero-logo-large img{
+  width:96%;
+  max-height:430px;
+  object-fit:contain;
+}
+
+.logo-slogan{
+  margin:20px 0 4px;
+  font-size:1.08rem;
+  font-weight:1000;
+  color:#7b4c36;
+  text-align:center;
+}
+
+.logo-slogan-zh{
+  margin:0;
+  color:#9a8277;
+  font-weight:800;
+  text-align:center;
+}
+
+@media(max-width:900px){
+  .hero.hero-v21{
+    grid-template-columns:1fr;
+    min-height:auto;
+  }
+  .hero-logo.hero-logo-large{
+    min-height:auto;
+  }
+  .hero-logo-large img{
+    width:100%;
+    max-height:360px;
+  }
+}
+</style>
 </head>
 <body>
 <div class="container">
@@ -20,20 +101,30 @@
     <a class="home-link" href="about.html">🌸 關於網站</a>
   </header>
 
-  <section class="hero">
-    <div>
+  <section class="hero hero-v21">
+    <div class="hero-left">
       <span class="kicker">🌸 Learning Entrance</span>
       <h1>今天，你想怎麼學？</h1>
       <p class="lead">
         讓每一天的真實生活，成為最自然的日文教材。<br>
         跟著浩婷さん的心得，和ショコさん一起學會日本人真正會說的日文。
       </p>
+
+      <div class="feature-list">
+        <div>🌸 真實生活日文</div>
+        <div>☕ 每天一點點</div>
+        <div>📚 知識慢慢累積</div>
+      </div>
+
       <div class="hero-note">
         首頁是學習入口。真正的課程、心得、知識庫與跟讀練習，都從下面的卡片進入。
       </div>
     </div>
-    <div class="hero-logo">
+
+    <div class="hero-logo hero-logo-large">
       <img src="shoko-logo.png" alt="ショコさん日本語教室 Online Logo">
+      <p class="logo-slogan">毎日少しずつ、いっしょに上手になろう。😊</p>
+      <p class="logo-slogan-zh">每天 15 分鐘，陪你把日文變成生活。</p>
     </div>
   </section>
 

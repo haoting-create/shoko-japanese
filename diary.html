@@ -5,10 +5,11 @@
 <meta name='viewport' content='width=device-width,initial-scale=1'>
 <title>浩婷每日中文心得目錄</title>
 <style>
-/* 溫馨日系底色 */
+/* 🍦 夢幻馬卡龍漸層底色 */
 body {
     font-family: "Noto Sans TC", sans-serif;
-    background: #fffaf5;
+    background: linear-gradient(135deg, #fff0f5 0%, #e6f2ff 100%);
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     color: #4a4a4a;
@@ -18,117 +19,138 @@ body {
     margin: 40px auto;
     padding: 20px;
 }
-/* 超可愛回首頁按鈕 */
+/* 🌟 可愛雲朵回首頁按鈕 */
 .back-btn {
     display: inline-block;
     text-decoration: none;
-    color: #ff8da1;
+    color: #ff6b8b;
     font-weight: bold;
     background: #ffffff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    border: 1px solid #ffe4e1;
-    box-shadow: 0 2px 8px rgba(255,182,193,0.1);
-    transition: all 0.3s;
+    padding: 10px 22px;
+    border-radius: 30px;
+    border: 3px dashed #ffb6c1;
+    box-shadow: 0 4px 10px rgba(255,182,193,0.2);
+    transition: all 0.3s ease;
 }
 .back-btn:hover {
     background: #fff0f2;
-    transform: translateX(-3px);
+    transform: scale(1.05) rotate(-2deg);
 }
-/* 主標題設計：加上可愛櫻花裝飾 */
+/* 🎀 主標題設計：滿滿可愛裝飾 */
 h1 {
     color: #d16276;
-    font-size: 2.2em;
+    font-size: 2.4em;
     text-align: center;
-    margin: 30px 0;
-    position: relative;
+    margin: 35px 0;
+    text-shadow: 2px 2px 0px #ffffff;
 }
-h1::before, h1::after {
-    content: "🌸";
-    margin: 0 10px;
-    font-size: 0.8em;
+h1 span {
+    display: inline-block;
+    animation: jelly 2s infinite;
 }
+@keyframes jelly {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
 /* 卡片列表容器 */
 .card-list {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
     margin-top: 30px;
 }
-/* 活潑的拍立得卡片樣式 */
+/* 🎨 馬卡龍基本卡片樣式 */
 .diary-card {
     display: block;
     text-decoration: none;
     background: #ffffff;
-    border: 2px solid #ead8c8;
-    border-radius: 20px;
-    padding: 22px 28px;
-    box-shadow: 0 6px 12px rgba(234, 216, 200, 0.3);
-    transition: all 0.3s ease;
+    border-radius: 24px;
+    padding: 25px 30px;
+    box-shadow: 0 8px 16px rgba(180, 180, 180, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* 超可愛彈跳特效 */
     position: relative;
-    overflow: hidden;
+    border: 3px solid transparent;
 }
-/* 滑鼠移過去的浮起放大特效 */
+/* 滑鼠移過去的「啵」彈跳放大 */
 .diary-card:hover {
-    transform: translateY(-5px);
-    border-color: #ffb6c1;
-    box-shadow: 0 10px 20px rgba(255, 182, 193, 0.3);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 25px rgba(255, 182, 193, 0.4);
 }
-/* 第一篇（最新一章）加上特別標籤飾條 */
+
+/* 🍓 草莓馬卡龍粉紅卡片（最新一篇文章） */
+.card-pink {
+    background: #fff0f3;
+    border-color: #ffb6c1;
+}
+.card-pink .card-title { color: #d16276; }
+.card-pink .card-date { background: #ffcbd3; color: #fff; }
+
+/* 🫐 藍莓馬卡龍粉藍卡片（第一篇文章） */
+.card-blue {
+    background: #f0f7ff;
+    border-color: #b3d7ff;
+}
+.card-blue .card-title { color: #2b6cb0; }
+.card-blue .card-date { background: #bee3f8; color: #2b6cb0; }
+
+/* 🎈 NEW 亮晶晶小貼紙 */
 .diary-card.latest::after {
     content: "NEW ✨";
     position: absolute;
-    top: 12px;
-    right: 20px;
-    background: #ff8da1;
+    top: -12px;
+    right: 25px;
+    background: linear-gradient(90deg, #ff6b8b, #ff8da1);
     color: white;
-    font-size: 0.8em;
+    font-size: 0.85em;
     font-weight: bold;
-    padding: 4px 10px;
-    border-radius: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(255, 107, 139, 0.3);
 }
-/* 卡片內日期樣式 */
+/* 卡片內可愛日期膠囊 */
 .card-date {
-    font-size: 0.9em;
-    color: #b09987;
-    margin: 0 0 8px 0;
+    display: inline-block;
+    font-size: 0.85em;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin: 0 0 12px 0;
     font-weight: bold;
-    display: flex;
-    align-items: center;
-    gap: 5px;
 }
 /* 卡片內標題樣式 */
 .card-title {
-    font-size: 1.25em;
-    color: #4a4a4a;
+    font-size: 1.35em;
     margin: 0;
     font-weight: bold;
-    line-height: 1.4;
-    transition: color 0.3s;
+    line-height: 1.5;
 }
-.diary-card:hover .card-title {
-    color: #d16276; /* 滑鼠移上去文字變粉色 */
+/* 裝飾小文字 */
+.card-deco {
+    float: right;
+    font-size: 1.5em;
 }
 </style>
 </head>
 <body>
 
 <div class='wrap'>
-    <p><a href='index.html' class="back-btn">🌟 回首頁入口</a></p>
+    <p style="text-align: center;"><a href='index.html' class="back-btn">🧸 🌟 回首頁入口 🌟 🧸</a></p>
     
-    <h1>浩婷每日中文心得</h1>
+    <h1><span>🎀 浩婷每日中文心得 🎀</span></h1>
     
     <div class="card-list">
         
-        <!-- 【卡片 2】：最新一篇文章 -->
-        <a href='diary002.html' class='diary-card latest'>
-            <p class='card-date'>📅 2026/06/22</p>
+        <!-- 🍓 【卡片 2】：草莓馬卡龍粉紅卡片 -->
+        <a href='diary002.html' class='diary-card card-pink latest'>
+            <span class="card-deco">🧸</span>
+            <div class='card-date'>📅 2026/06/22</div>
             <p class='card-title'>📝 檢查自己心中的那把尺到底準不準</p>
         </a>
         
-        <!-- 【卡片 1】：第一篇文章 -->
-        <a href='diary001.html' class='diary-card'>
-            <p class='card-date'>📅 2026/06/21</p>
+        <!-- 🫐 【卡片 1】：藍莓馬卡龍粉藍卡片 -->
+        <a href='diary001.html' class='diary-card card-blue'>
+            <span class="card-deco">🎉</span>
+            <div class='card-date'>📅 2026/06/21</div>
             <p class='card-title'>📝 我的新發現！AI 營養師到我家報到啦！</p>
         </a>
         

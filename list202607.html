@@ -27,8 +27,8 @@
         .diary-item { background: #ffffff; border: 1px solid #ead8c8; border-radius: 16px; padding: 20px 24px; text-decoration: none; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(74, 59, 50, 0.02); transition: all 0.3s ease; }
         .diary-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(181, 124, 76, 0.08); border-color: #d4a373; }
         .diary-title { font-size: 18px; font-weight: 700; color: #4a3b32; margin: 0; }
-        .diary-date { font-size: 14px; color: #bfaaa0; font-weight: 500; }
-        @media (max-width: 600px) { body { margin: 30px auto; padding: 0 16px; } .page-title { font-size: 26px; } .diary-item { flex-direction: column; align-items: flex-start; gap: 8px; } }
+        .diary-date { font-size: 14px; color: #bfaaa0; font-weight: 500; flex-shrink: 0; margin-left: 15px; }
+        @media (max-width: 600px) { body { margin: 30px auto; padding: 0 16px; } .page-title { font-size: 26px; } .diary-item { flex-direction: column; align-items: flex-start; gap: 8px; } .diary-date { margin-left: 0; } }
     </style>
 </head>
 <body>
@@ -42,7 +42,7 @@
         <div class="header-line"></div>
     </header>
 
-    <!-- 7 月份心得列表 -->
+    <!-- 7 月份心得列表（已移除自動編號，與 6 月規格完全統一） -->
     <div class="diary-list">
         <!-- 第 1 篇：7/02 富貴菁英會心得 -->
         <a href="diary20260702.html" class="diary-item">

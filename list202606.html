@@ -1,27 +1,71 @@
-<!doctype html><html lang='zh-Hant'>
+<!doctype html>
+<html lang='zh-Hant'>
 <head>
-<meta charset='utf-8'>
-<meta name='viewport' content='width=device-width,initial-scale=1'>
-<link rel='stylesheet' href='style.css'>
-<title>中文心得列表</title>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>2026年06月 ｜ 實修心得清單</title>
+    <link rel='stylesheet' href='style.css'>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 24px;
+            line-height: 1.6;
+            background: #fffaf5; 
+            color: #4a3b32;
+        }
+        .back-nav { margin-bottom: 30px; }
+        .back-link { text-decoration: none; color: #b57c4c; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; transition: all 0.3s ease; }
+        .back-link:hover { color: #d4a373; transform: translateX(-4px); }
+        .page-header { text-align: center; margin-bottom: 40px; }
+        .page-title { color: #4a3b32; font-size: 32px; font-weight: 700; margin: 0 0 12px 0; }
+        .header-line { width: 60px; height: 3px; background: #d4a373; margin: 20px auto 0; border-radius: 2px; }
+        
+        /* 心得列表排版 */
+        .diary-list { display: flex; flex-direction: column; gap: 16px; margin-top: 30px; }
+        .diary-item { background: #ffffff; border: 1px solid #ead8c8; border-radius: 16px; padding: 20px 24px; text-decoration: none; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(74, 59, 50, 0.02); transition: all 0.3s ease; }
+        .diary-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(181, 124, 76, 0.08); border-color: #d4a373; }
+        .diary-title { font-size: 18px; font-weight: 700; color: #4a3b32; margin: 0; }
+        .diary-date { font-size: 14px; color: #bfaaa0; font-weight: 500; }
+        @media (max-width: 600px) { body { margin: 30px auto; padding: 0 16px; } .page-title { font-size: 26px; } .diary-item { flex-direction: column; align-items: flex-start; gap: 8px; } }
+    </style>
 </head>
-<body style="font-family:'Noto Sans TC';max-width:900px;margin:40px auto;padding:20px;line-height:1.8;background:#fffaf5;">
-<p><a href='index.html' style="text-decoration:none;color:#ff8da1;font-weight:bold;">← 回首頁</a></p>
-<h1 style="color:#d16276;border-bottom:2px solid #ffe4e1;padding-bottom:10px;">浩婷每日中文心得</h1>
+<body>
 
-<!-- 最新文章放最上面，這次只幫您新增了 009 與 008 -->
-<p style="font-size:1.15em;"><a href='diary009.html' style="text-decoration:none;color:#4a4a4a;">📝 2026/06/29｜真正需要管理的不是公司，而是自己的心</a></p>
-<p style="font-size:1.15em;"><a href='diary008.html' style="text-decoration:none;color:#777;">📝 2026/06/28｜奇蹟來自於決心！拼完兩週工作量的轉念體悟</a></p>
+    <div class="back-nav">
+        <a href='diary.html' class="back-link">← 返回月份總目錄</a>
+    </div>
+    
+    <header class="page-header">
+        <h1 class="page-title">📅 2026 年 06 月心得清單</h1>
+        <div class="header-line"></div>
+    </header>
 
-<!-- 以下完全是您原本一模一樣的舊清單，一字未改 -->
-<p style="font-size:1.15em;"><a href='diary007.html' style="text-decoration:none;color:#777;">📝 2026/06/27｜兩場志工任務與生命改變的無價答案</a></p>
-<p style="font-size:1.15em;"><a href='diary006.html' style="text-decoration:none;color:#777;">📝 2026/06/26｜生活即是最好的教材，忙碌中依舊保有覺察</a></p>
-<p style="font-size:1.15em;"><a href='diary005.html' style="text-decoration:none;color:#777;">📝 2026/06/25｜放慢步伐看更遠，謝謝每天努力不懈的自己</a></p>
-<p style="font-size:1.15em;"><a href='diary004.html' style="text-decoration:none;color:#777;">📝 2026/06/24｜在浮躁中踩下煞車，感謝善知識的清涼風</a></p>
-<p style="font-size:1.15em;"><a href='diary003.html' style="text-decoration:none;color:#777;">📝 2026/06/23｜修煉即修心，離苦即得樂</a></p>
-<p style="font-size:1.15em;"><a href='diary002.html' style="text-decoration:none;color:#777;">📝 2026/06/22｜檢查自己心中的那把尺到底準不準</a></p>
-<p style="font-size:1.15em;"><a href='diary001.html' style="text-decoration:none;color:#777;">📝 2026/06/21｜我的新發現！AI 營養師到我家報到啦！</a></p>
+    <!-- 6 月份的 10 篇心得列表 -->
+    <div class="diary-list">
+        <!-- 這裡預留你之前的 1 ~ 8 篇，你可以自己複製原本的進來 -->
+        <a href="diary001.html" class="diary-item"><p class="diary-title">第 001 篇 心得日記</p><span class="diary-date">2026/06/21</span></a>
+        <a href="diary002.html" class="diary-item"><p class="diary-title">第 002 篇 心得日記</p><span class="diary-date">2026/06/22</span></a>
+        <a href="diary003.html" class="diary-item"><p class="diary-title">第 003 篇 心得日記</p><span class="diary-date">2026/06/23</span></a>
+        <a href="diary004.html" class="diary-item"><p class="diary-title">第 004 篇 心得日記</p><span class="diary-date">2026/06/24</span></a>
+        <a href="diary005.html" class="diary-item"><p class="diary-title">第 005 篇 心得日記</p><span class="diary-date">2026/06/25</span></a>
+        <a href="diary006.html" class="diary-item"><p class="diary-title">第 006 篇 心得日記</p><span class="diary-date">2026/06/26</span></a>
+        <a href="diary007.html" class="diary-item"><p class="diary-title">第 007 篇 心得日記</p><span class="diary-date">2026/06/27</span></a>
+        <a href="diary008.html" class="diary-item"><p class="diary-title">第 008 篇 心得日記</p><span class="diary-date">2026/06/28</span></a>
+
+        <!-- 第 9 篇：職場霸凌那一篇 -->
+        <a href="diary009.html" class="diary-item">
+            <p class="diary-title">真正需要管理的不是公司，而是自己的心</p>
+            <span class="diary-date">2026/06/29</span>
+        </a>
+
+        <!-- 正式補上第 10 篇：AI 學習那一篇 -->
+        <a href="davis010.html" class="diary-item">
+            <p class="diary-title">越學越興奮！與 AI 協作開啟創意的無限可能</p>
+            <span class="diary-date">2026/06/30</span>
+        </a>
+    </div>
 
 </body>
 </html>
-

@@ -3,9 +3,10 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
-    <title>2026年06月 ｜ 實修心得清單</title>
+    <title>浩婷每日心得 ｜ 全月份總目錄</title>
     <link rel='stylesheet' href='style.css'>
     <style>
+        /* 全域視覺優化，延續最純淨的暖心燕麥色 */
         body {
             font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
             max-width: 800px;
@@ -15,80 +16,235 @@
             background: #fffaf5; 
             color: #4a3b32;
         }
-        .back-nav { margin-bottom: 30px; }
-        .back-link { text-decoration: none; color: #b57c4c; font-weight: 500; font-size: 15px; display: inline-flex; align-items: center; transition: all 0.3s ease; }
-        .back-link:hover { color: #d4a373; transform: translateX(-4px); }
-        .page-header { text-align: center; margin-bottom: 40px; }
-        .page-title { color: #4a3b32; font-size: 32px; font-weight: 700; margin: 0 0 12px 0; }
-        .header-line { width: 60px; height: 3px; background: #d4a373; margin: 20px auto 0; border-radius: 2px; }
         
-        /* 心得列表排版 */
-        .diary-list { display: flex; flex-direction: column; gap: 16px; margin-top: 30px; }
-        .diary-item { background: #ffffff; border: 1px solid #ead8c8; border-radius: 16px; padding: 20px 24px; text-decoration: none; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(74, 59, 50, 0.02); transition: all 0.3s ease; }
-        .diary-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(181, 124, 76, 0.08); border-color: #d4a373; }
-        .diary-title { font-size: 18px; font-weight: 700; color: #4a3b32; margin: 0; }
-        .diary-date { font-size: 14px; color: #bfaaa0; font-weight: 500; flex-shrink: 0; margin-left: 15px; }
-        @media (max-width: 600px) { body { margin: 30px auto; padding: 0 16px; } .page-title { font-size: 26px; } .diary-item { flex-direction: column; align-items: flex-start; gap: 8px; } .diary-date { margin-left: 0; } }
+        /* 頂部導覽 */
+        .back-nav {
+            margin-bottom: 30px;
+        }
+        .back-link {
+            text-decoration: none;
+            color: #b57c4c;
+            font-weight: 500;
+            font-size: 15px;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .back-link:hover {
+            color: #d4a373;
+            transform: translateX(-4px);
+        }
+
+        /* 標題區塊設計 */
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .page-title {
+            color: #4a3b32;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            letter-spacing: 1px;
+        }
+        .page-subtitle {
+            color: #8c7b70;
+            font-size: 16px;
+            margin: 0 auto;
+            max-width: 500px;
+        }
+        .header-line {
+            width: 60px;
+            height: 3px;
+            background: #d4a373;
+            margin: 25px auto 0;
+            border-radius: 2px;
+        }
+
+        /* 月份分組區塊標題 */
+        .month-section {
+            margin-bottom: 45px;
+        }
+        .month-label {
+            font-size: 20px;
+            color: #4a3b32;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            padding-left: 5px;
+        }
+        .month-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: #ead8c8;
+        }
+
+        /* 心得列表條目排版 */
+        .diary-list { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 14px; 
+        }
+        .diary-item { 
+            background: #ffffff; 
+            border: 1px solid #ead8c8; 
+            border-radius: 16px; 
+            padding: 18px 24px; 
+            text-decoration: none; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 4px 12px rgba(74, 59, 50, 0.02); 
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
+        }
+        .diary-item:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 20px rgba(181, 124, 76, 0.08); 
+            border-color: #d4a373; 
+        }
+        .diary-title { 
+            font-size: 17.5px; 
+            font-weight: 700; 
+            color: #4a3b32; 
+            margin: 0; 
+        }
+        .diary-date { 
+            font-size: 14px; 
+            color: #bfaaa0; 
+            font-weight: 500; 
+            flex-shrink: 0; 
+            margin-left: 15px; 
+        }
+
+        /* 未來月份的預留精緻樣式 */
+        .future-section {
+            opacity: 0.65;
+        }
+        .future-placeholder {
+            background: #fafafa;
+            border: 1px dashed #ead8c8;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            color: #8c7b70;
+            font-size: 15px;
+            font-style: italic;
+        }
+
+        /* 手機板響應式優化 */
+        @media (max-width: 600px) { 
+            body { margin: 30px auto; padding: 0 16px; } 
+            .page-title { font-size: 26px; } 
+            .diary-item { flex-direction: column; align-items: flex-start; gap: 6px; } 
+            .diary-date { margin-left: 0; } 
+        }
     </style>
 </head>
 <body>
 
+    <!-- 頂部導覽 -->
     <div class="back-nav">
-        <a href='diary.html' class="back-link">← 返回月份總目錄</a>
+        <a href='index.html' class="back-link">← 返回首頁</a>
     </div>
     
+    <!-- 網頁大標題區塊 -->
     <header class="page-header">
-        <h1 class="page-title">📅 2026 年 06 月心得清單</h1>
+        <h1 class="page-title">浩婷每日心得 ‧ 總清單</h1>
+        <p class="page-subtitle">記錄紅塵實修與轉念的點滴心路歷程，讓心時時保持清靜。</p>
         <div class="header-line"></div>
     </header>
 
-    <!-- 6 月份的 10 篇心得分流清單 -->
-    <div class="diary-list">
-        <!-- 第 1 篇到第 8 篇全面補上精美標題 -->
-        <a href="diary001.html" class="diary-item">
-            <p class="diary-title">第 001 篇 ‧ 初心不忘，寫下實修的第一步</p>
-            <span class="diary-date">2026/06/21</span>
-        </a>
-        <a href="diary002.html" class="diary-item">
-            <p class="diary-title">第 002 篇 ‧ 轉念功夫的日常練習與實踐</p>
-            <span class="diary-date">2026/06/22</span>
-        </a>
-        <a href="diary003.html" class="diary-item">
-            <p class="diary-title">第 003 篇 ‧ 謝天謝地，感受生命中的正向能量</p>
-            <span class="diary-date">2026/06/23</span>
-        </a>
-        <a href="diary004.html" class="diary-item">
-            <p class="diary-title">第 004 篇 ‧ 看見自己的盲點，突破修行的盲區</p>
-            <span class="diary-date">2026/06/24</span>
-        </a>
-        <a href="diary005.html" class="diary-item">
-            <p class="diary-title">第 005 篇 ‧ 在紅塵試煉中，尋找內心的平靜</p>
-            <span class="diary-date">2026/06/25</span>
-        </a>
-        <a href="diary006.html" class="diary-item">
-            <p class="diary-title">第 006 篇 ‧ 菁英會共修，與同修們的能量共振</p>
-            <span class="diary-date">2026/06/26</span>
-        </a>
-        <a href="diary007.html" class="diary-item">
-            <p class="diary-title">第 007 篇 ‧ 感恩導師引領，在愛中共勉成長</p>
-            <span class="diary-date">2026/06/27</span>
-        </a>
-        <a href="diary008.html" class="diary-item">
-            <p class="diary-title">第 008 篇 ‧ 太陽光芒注入，補足生命豐盛資糧</p>
-            <span class="diary-date">2026/06/28</span>
-        </a>
+    <!-- ==================== 12 月份區塊 ==================== -->
+    <div class="month-section future-section">
+        <div class="month-label">📅 2026 年 12 月份</div>
+        <div class="future-placeholder">❄️ 歲末感恩 ‧ 即將登場</div>
+    </div>
 
-        <!-- 第 9 篇 -->
-        <a href="diary009.html" class="diary-item">
-            <p class="diary-title">真正需要管理的不是公司，而是自己的心</p>
-            <span class="diary-date">2026/06/29</span>
-        </a>
+    <!-- ==================== 11 月份區塊 ==================== -->
+    <div class="month-section future-section">
+        <div class="month-label">📅 2026 年 11 月份</div>
+        <div class="future-placeholder">🍂 秋末轉念 ‧ 敬請期待</div>
+    </div>
 
-        <!-- 第 10 篇 -->
-        <a href="davis010.html" class="diary-item">
-            <p class="diary-title">越學越興奮！與 AI 協作開啟創意的無限可能</p>
-            <span class="diary-date">2026/06/30</span>
-        </a>
+    <!-- ==================== 10 月份區塊 ==================== -->
+    <div class="month-section future-section">
+        <div class="month-label">📅 2026 年 10 月份</div>
+        <div class="future-placeholder">🍁 豐盛資糧 ‧ 敬請期待</div>
+    </div>
+
+    <!-- ==================== 09 月份區塊 ==================== -->
+    <div class="month-section future-section">
+        <div class="month-label">📅 2026 年 09 月份</div>
+        <div class="future-placeholder">🌾 初秋實修 ‧ 敬請期待</div>
+    </div>
+
+    <!-- ==================== 08 月份區塊 ==================== -->
+    <div class="month-section future-section">
+        <div class="month-label">📅 2026 年 08 月份</div>
+        <div class="future-placeholder">☀️ 盛夏光芒 ‧ 敬請期待</div>
+    </div>
+
+    <!-- ==================== 07 月份區塊（最新連載中） ==================== -->
+    <div class="month-section">
+        <div class="month-label">📅 2026 年 07 月份</div>
+        
+        <div class="diary-list">
+            <a href="diary20260702.html" class="diary-item">
+                <p class="diary-title">讓心清靜，調動靈魂深處的潛能與智慧</p>
+                <span class="diary-date">2026/07/02</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- ==================== 06 月份區塊 ==================== -->
+    <div class="month-section">
+        <div class="month-label">📅 2026 年 06 月份</div>
+        
+        <div class="diary-list">
+            <a href="diary001.html" class="diary-item">
+                <p class="diary-title">初心不忘，寫下實修的第一步</p>
+                <span class="diary-date">2026/06/21</span>
+            </a>
+            <a href="diary002.html" class="diary-item">
+                <p class="diary-title">轉念功夫的日常練習與實踐</p>
+                <span class="diary-date">2026/06/22</span>
+            </a>
+            <a href="diary003.html" class="diary-item">
+                <p class="diary-title">謝天謝地，感受生命中的正向能量</p>
+                <span class="diary-date">2026/06/23</span>
+            </a>
+            <a href="diary004.html" class="diary-item">
+                <p class="diary-title">看見自己的盲點，突破修行的盲區</p>
+                <span class="diary-date">2026/06/24</span>
+            </a>
+            <a href="diary005.html" class="diary-item">
+                <p class="diary-title">在紅塵試煉中，尋找內心的平靜</p>
+                <span class="diary-date">2026/06/25</span>
+            </a>
+            <a href="diary006.html" class="diary-item">
+                <p class="diary-title">菁英會共修，與同修們的能量共振</p>
+                <span class="diary-date">2026/06/26</span>
+            </a>
+            <a href="diary007.html" class="diary-item">
+                <p class="diary-title">感恩導師引領，在愛中共勉成長</p>
+                <span class="diary-date">2026/06/27</span>
+            </a>
+            <a href="diary008.html" class="diary-item">
+                <p class="diary-title">太陽光芒注入，補足生命豐盛資糧</p>
+                <span class="diary-date">2026/06/28</span>
+            </a>
+            <a href="diary009.html" class="diary-item">
+                <p class="diary-title">真正需要管理的不是公司，而是自己的心</p>
+                <span class="diary-date">2026/06/29</span>
+            </a>
+            <a href="davis010.html" class="diary-item">
+                <p class="diary-title">越學越興奮！與 AI 協作開啟創意的無限可能</p>
+                <span class="diary-date">2026/06/30</span>
+            </a>
+        </div>
     </div>
 
 </body>

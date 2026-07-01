@@ -61,6 +61,21 @@
             font-weight: 500;
         }
 
+        /* 圖片卡片樣式 */
+        .image-card {
+            background: #fff;
+            border: 1px solid #ead8c8;
+            border-radius: 24px;
+            padding: 28px;
+            margin-bottom: 22px;
+            box-shadow: 0 4px 12px rgba(74, 59, 50, 0.02);
+        }
+        img {
+            width: 100%;
+            border-radius: 18px;
+            display: block;
+        }
+
         /* 心得內容主卡片 */
         .card {
             background: #fff;
@@ -98,7 +113,7 @@
         /* 手機板調整 */
         @media (max-width: 600px) {
             body { margin: 20px auto; }
-            .header-card, .card { padding: 25px 20px; }
+            .header-card, .image-card, .card { padding: 25px 20px; }
             .header-card h1 { font-size: 22px; }
             .card h2 { font-size: 18px; }
             p { font-size: 15.5px; }
@@ -119,6 +134,11 @@
     <div class='header-card'>
         <h1>越學越興奮！與 AI 協作開啟創意的無限可能</h1>
         <div class="date-badge"><strong>日期：</strong>2026/06/30</div>
+    </div>
+
+    <!-- 專屬圖片區塊 -->
+    <div class='image-card'>
+        <img src='davis010.png' alt='AI 創作心得插圖'>
     </div>
 
     <!-- 心得內容區塊 -->
@@ -147,7 +167,7 @@
 
         <p>每一次投入志工服務、參加每週的菁英會、上台分享法布施，或是思考如何把導師分享的正向理念傳遞給更多人時，我都有同樣的感受。因為知道自己做的是有意義的事情，所以即使花再多時間，也甘之如飴。</p>
 
-        <p>導師常提醒我們，要不斷學習、不斷成長。我想，AI 對我來說，不只是科技工具，更是一位能陪伴我學習、幫助我實現創意的好夥伴。它沒有取代我的思考，而是讓我的想法有更多機會被實現。</p>
+        <p>導師常提醒我們，要不斷學習、不断成長。我想，AI 對我來說，不只是科技工具，更是一位能陪伴我學習、幫助我實現創意的好夥伴。它沒有取代我的思考，而是讓我的想法有更多機會被實現。</p>
 
         <p>今天是 2026 年上半年的最後一天。</p>
 

@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang='zh-Hant'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>AI日記 ｜ 日文單字文法特訓教室</title>
+    <link rel='stylesheet' href='style.css'>
+    <style>
+        /* 基礎全域設定，延續乾淨燕麥色風格 */
+        body {
+            font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fffaf5;
+            color: #4a3b32;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.8;
+        }
+        
+        /* 教學大卡片外框 */
+        .wrap { 
+            background: #fff; 
+            border: 1px solid #ead8c8; 
+            border-radius: 24px; 
+            padding: 35px; 
+            box-shadow: 0 4px 15px rgba(234, 216, 200, 0.2); 
+        }
+        
+        /* 網頁主標題 */
+        h1 { 
+            color: #4a3b32; 
+            font-size: 26px; 
+            border-bottom: 2px solid #ead8c8; 
+            padding-bottom: 15px; 
+            margin-bottom: 30px; 
+            text-align: center; 
+        }
+        
+        /* 各大區塊標題 */
+        h2 { 
+            color: #b57c4c; 
+            font-size: 20px; 
+            margin-top: 40px; 
+            border-left: 5px solid #d4a373; 
+            padding-left: 12px; 
+        }
+        
+        /* 教學項目小卡片 */
+        .item-box { 
+            background: #fdf8f4; 
+            border: 1px solid #f3e6da; 
+            border-radius: 16px; 
+            padding: 22px; 
+            margin-bottom: 20px; 
+        }
+        
+        /* 日文字體強調 */
+        .japanese { 
+            font-size: 20px; 
+            font-weight: bold; 
+            color: #1a202c; 
+            display: inline-block; 
+            margin-right: 15px; 
+            vertical-align: middle;
+        }
+        
+        /* 中文註解與文法解釋 */
+        .chinese { 
+            font-size: 15.5px; 
+            color: #555555; 
+            margin-top: 8px; 
+        }
+        .grammar-tip {
+            font-size: 14.5px;
+            color: #8c7b70;
+            background: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px dashed #ead8c8;
+            margin-top: 5px;
+        }
+        
+        /* 出自日記的課文例句區塊 */
+        .example { 
+            background: #ffffff; 
+            border-radius: 10px; 
+            padding: 12px 18px; 
+            margin-top: 12px; 
+            border-left: 4px solid #d4a373; 
+            font-size: 16px; 
+        }
+        .example strong {
+            color: #b57c4c;
+        }
+        
+        /* 網頁內建語音發音按鈕 */
+        .audio-btn {
+            background: #d4a373;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 13.5px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            vertical-align: middle;
+            box-shadow: 0 2px 4px rgba(212, 163, 115, 0.2);
+        }
+        .audio-btn:hover { 
+            background: #b57c4c; 
+            transform: scale(1.03);
+        }
+        .audio-btn:active {
+            transform: scale(0.98);
+        }
+        
+        /* 返回導覽 */
+        .nav-link {
+            margin-bottom: 20px;
+        }
+        .nav-link a {
+            text-decoration: none;
+            color: #b57c4c;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+    
+    <!-- 返回目錄導覽 -->
+    <div class="nav-link">
+        <a href='diary.html'>← 返回月份總目錄</a>
+    </div>
+
+    <h1>🤖 AI學習日記 ‧ 日文焦點特訓教室</h1>
+    <p style="color: #8c7b70; text-align: center; margin-top: -20px; font-size: 14.5px;">
+        點擊下方各單元的 🔊 按鈕，即可以 <strong>0.75倍清晰慢速</strong> 聆聽道地日文發音。
+    </p>
+
+    <!-- ==================== 第一部分：核心單字 ==================== -->
+    <h2>一、 核心單字（単語）</h2>
+    
+    <!-- 單字 1 -->
+    <div class="item-box">
+        <span class="japanese">1. 丸一日（まるいちにち）</span>
+        <button class="audio-btn" onclick="speak('丸一日')">🔊 聽單字</button>
+        <div class="chinese">【名詞】整整一天、一整天。</div>
+        <div class="grammar-tip">💡 <strong>日常延伸：</strong>想要形容「一整天都在睡覺」，可以說「丸一日寝る」。</div>
+    </div>
+
+    <!-- 單字 2 -->
+    <div class="item-box">
+        <span class="japanese">2. 甘く見る（あまくみる）</span>
+        <button class="audio-btn" onclick="speak('甘く見る')">🔊 聽單字</button>
+        <div class="chinese">【動詞】小看、輕視、瞧不起。</div>
+        <div class="grammar-tip">💡 <strong>結構拆解：</strong>「甘い（天真的、甜的）」加上「見る（看待）」，合起來就是把事情看得很天真、也就是「小看」的意思。</div>
+    </div>
+
+    <!-- 單字 3 -->
+    <div class="item-box">
+        <span class="japanese">3. 棒人間（ぼうにんげん）</span>
+        <button class="audio-btn" onclick="speak('棒人間')">🔊 聽單字</button>
+        <div class="chinese">【名詞】火柴人、線條人。</div>
+        <div class="grammar-tip">💡 <strong>由來：</strong>因為是用像木棒（棒）一樣的線條畫出來的人（人間），所以叫做棒人間。</div>
+    </div>
+
+
+    <!-- ==================== 第二部分：實用片語與表現 ==================== -->
+    <h2>二、 實用片語與副詞（表現）</h2>
+    
+    <!-- 片語 1 -->
+    <div class="item-box">
+        <span class="japanese">1. ワクワクする</span>
+        <button class="audio-btn" onclick="speak('ワクワクする')">🔊 聽片語</button>
+        <div class="chinese">【副詞/動詞】興奮、雀躍（期待好事情發生、心跳撲通撲通跳的喜悅）。</div>
+        <div class="example">
+            <strong>出自日記的句子：</strong><br>
+            やればやるほどワクワクして、どんどん元気になりました。
+            <button class="audio-btn" onclick="speak('やればやるほどワクワクして、どんどん元気になりました。')">🔊 聽整句</button>
+            <div style="color: #666; font-size: 14.5px; margin-top: 4px;">（越做越覺得興奮，變得越來越有精神。）</div>
+        </div>
+    </div>
+
+    <!-- 片語 2 -->
+    <div class="item-box">
+        <span class="japanese">2. 手が止まらない（てがとまらない）</span>
+        <button class="audio-btn" onclick="speak('手が止まらない')">🔊 聽片語</button>
+        <div class="chinese">【慣用語】手停不下來。形容非常投入某件事、欲罷不能的熱情狀態。</div>
+    </div>
+
+    <!-- 片語 3 -->
+    <div class="item-box">
+        <span class="japanese">3. 夢のまた夢（ゆめのまたゆめ）</span>
+        <button class="audio-btn" onclick="speak('夢のまた夢')">🔊 聽片語</button>
+        <div class="chinese">【名詞/片語】夢想中的夢想。形容以前覺得非常遙遠、根本不可能實現的事。</div>
+    </div>
+
+
+    <!-- ==================== 第三部分：核心文法 ==================== -->
+    <h2>三、 重點文法特訓（文法）</h2>
+    
+    <!-- 文法 1 -->
+    <div class="item-box">
+        <span class="japanese">1. ～ば～ほど（越……就越……）</span>
+        <div class="chinese">【文法功能】用來表示某件事情的程度，會隨著前項條件的進展而等比例加深。</div>
+        <div class="example">
+            <strong>課文精選句：</strong><br>
+            やればやるほどエネルギーが湧いてきます。
+            <button class="audio-btn" onclick="speak('やればやるほどエネルギーが湧いてきます。')">🔊 聽整句</button>
+            <div style="color: #666; font-size: 14.5px; margin-top: 4px;">（越做越有能量、越做越開心。）</div>
+        </div>
+    </div>
+
+    <!-- 文法 2 -->
+    <div class="item-box">
+        <span class="japanese">2. 動詞て形 + いる + うちに（在……的過程中，不知不覺……）</span>
+        <div class="chinese">【文法功能】表示在做某個動作或某個狀態持續的過程中，身體或心境不知不覺發生了後續沒預料到的變化。</div>
+        <div class="example">
+            <strong>課文精選句：</strong><br>
+            AIとおしゃべりしているうちに、ウェブサイト作りの話になりました。
+            <button class="audio-btn" onclick="speak('AIとおしゃべりしているうちに、ウェブサイト作りの話になりました。')">🔊 聽整句</button>
+            <div style="color: #666; font-size: 14.5px; margin-top: 4px;">（和 AI 聊著聊著，竟然不知不覺聊到做網站的話題了。）</div>
+        </div>
+    </div>
+
+</div>
+
+<!-- 🌐 網頁語音發音核心引擎 (Web Speech API) -->
+<script>
+function speak(text) {
+    // 檢查瀏覽器是否支援語音功能
+    if ('speechSynthesis' in window) {
+        // 先停止目前正在播放的語音，避免多個按鈕連續點擊時聲音重疊
+        window.speechSynthesis.cancel();
+        
+        // 建立語音請求
+        var utterance = new SpeechSynthesisUtterance(text);
+        
+        utterance.lang = 'ja-JP';  // 語系設定：日文
+        utterance.rate = 0.75;     // ⭐ 關鍵：精準鎖定 0.75 慢速發音，咬字最清晰！
+        utterance.pitch = 1.05;    // 微調音調，讓聲音聽起來像親切的日文老師
+
+        // 執行發音
+        window.speechSynthesis.speak(utterance);
+    } else {
+        alert('抱歉，您的瀏覽器不支援網頁語音發音功能，建議使用 Chrome 或 Safari 瀏覽器。');
+    }
+}
+</script>
+
+</body>
+</html>

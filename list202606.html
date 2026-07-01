@@ -27,8 +27,8 @@
         .diary-item { background: #ffffff; border: 1px solid #ead8c8; border-radius: 16px; padding: 20px 24px; text-decoration: none; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 10px rgba(74, 59, 50, 0.02); transition: all 0.3s ease; }
         .diary-item:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(181, 124, 76, 0.08); border-color: #d4a373; }
         .diary-title { font-size: 18px; font-weight: 700; color: #4a3b32; margin: 0; }
-        .diary-date { font-size: 14px; color: #bfaaa0; font-weight: 500; }
-        @media (max-width: 600px) { body { margin: 30px auto; padding: 0 16px; } .page-title { font-size: 26px; } .diary-item { flex-direction: column; align-items: flex-start; gap: 8px; } }
+        .diary-date { font-size: 14px; color: #bfaaa0; font-weight: 500; flex-shrink: 0; margin-left: 15px; }
+        @media (max-width: 600px) { body { margin: 30px auto; padding: 0 16px; } .page-title { font-size: 26px; } .diary-item { flex-direction: column; align-items: flex-start; gap: 8px; } .diary-date { margin-left: 0; } }
     </style>
 </head>
 <body>
@@ -42,25 +42,48 @@
         <div class="header-line"></div>
     </header>
 
-    <!-- 6 月份的 10 篇心得列表 -->
+    <!-- 6 月份的 10 篇心得分流清單（已去除自動編號） -->
     <div class="diary-list">
-        <!-- 這裡預留你之前的 1 ~ 8 篇，你可以自己複製原本的進來 -->
-        <a href="diary001.html" class="diary-item"><p class="diary-title">第 001 篇 心得日記</p><span class="diary-date">2026/06/21</span></a>
-        <a href="diary002.html" class="diary-item"><p class="diary-title">第 002 篇 心得日記</p><span class="diary-date">2026/06/22</span></a>
-        <a href="diary003.html" class="diary-item"><p class="diary-title">第 003 篇 心得日記</p><span class="diary-date">2026/06/23</span></a>
-        <a href="diary004.html" class="diary-item"><p class="diary-title">第 004 篇 心得日記</p><span class="diary-date">2026/06/24</span></a>
-        <a href="diary005.html" class="diary-item"><p class="diary-title">第 005 篇 心得日記</p><span class="diary-date">2026/06/25</span></a>
-        <a href="diary006.html" class="diary-item"><p class="diary-title">第 006 篇 心得日記</p><span class="diary-date">2026/06/26</span></a>
-        <a href="diary007.html" class="diary-item"><p class="diary-title">第 007 篇 心得日記</p><span class="diary-date">2026/06/27</span></a>
-        <a href="diary008.html" class="diary-item"><p class="diary-title">第 008 篇 心得日記</p><span class="diary-date">2026/06/28</span></a>
+        <a href="diary001.html" class="diary-item">
+            <p class="diary-title">初心不忘，寫下實修的第一步</p>
+            <span class="diary-date">2026/06/21</span>
+        </a>
+        <a href="diary002.html" class="diary-item">
+            <p class="diary-title">轉念功夫的日常練習與實踐</p>
+            <span class="diary-date">2026/06/22</span>
+        </a>
+        <a href="diary003.html" class="diary-item">
+            <p class="diary-title">謝天謝地，感受生命中的正向能量</p>
+            <span class="diary-date">2026/06/23</span>
+        </a>
+        <a href="diary004.html" class="diary-item">
+            <p class="diary-title">看見自己的盲點，突破修行的盲區</p>
+            <span class="diary-date">2026/06/24</span>
+        </a>
+        <a href="diary005.html" class="diary-item">
+            <p class="diary-title">在紅塵試煉中，尋找內心的平靜</p>
+            <span class="diary-date">2026/06/25</span>
+        </a>
+        <a href="diary006.html" class="diary-item">
+            <p class="diary-title">菁英會共修，與同修們的能量共振</p>
+            <span class="diary-date">2026/06/26</span>
+        </a>
+        <a href="diary007.html" class="diary-item">
+            <p class="diary-title">感恩導師引引領，在愛中共勉成長</p>
+            <span class="diary-date">2026/06/27</span>
+        </a>
+        <a href="diary008.html" class="diary-item">
+            <p class="diary-title">太陽光芒注入，補足生命豐盛資糧</p>
+            <span class="diary-date">2026/06/28</span>
+        </a>
 
-        <!-- 第 9 篇：職場霸凌那一篇 -->
+        <!-- 第 9 篇 -->
         <a href="diary009.html" class="diary-item">
             <p class="diary-title">真正需要管理的不是公司，而是自己的心</p>
             <span class="diary-date">2026/06/29</span>
         </a>
 
-        <!-- 正式補上第 10 篇：AI 學習那一篇 -->
+        <!-- 第 10 篇 -->
         <a href="davis010.html" class="diary-item">
             <p class="diary-title">越學越興奮！與 AI 協作開啟創意的無限可能</p>
             <span class="diary-date">2026/06/30</span>

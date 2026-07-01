@@ -3,17 +3,17 @@
 <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width,initial-scale=1'>
-    <title>浩婷每日心得 ｜ 全月份總目錄</title>
+    <title>浩婷每日心得 ｜ 月份總目錄</title>
     <link rel='stylesheet' href='style.css'>
     <style>
-        /* 全域視覺優化，延續最純淨的暖心燕麥色 */
+        /* 全域視覺優化 */
         body {
             font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
             max-width: 800px;
             margin: 50px auto;
             padding: 0 24px;
             line-height: 1.6;
-            background: #fffaf5; 
+            background: #fffaf5; /* 暖心燕麥色底 */
             color: #4a3b32;
         }
         
@@ -39,6 +39,7 @@
         .page-header {
             text-align: center;
             margin-bottom: 50px;
+            position: relative;
         }
         .page-title {
             color: #4a3b32;
@@ -61,13 +62,13 @@
             border-radius: 2px;
         }
 
-        /* 月份分組區塊標題 */
-        .month-section {
-            margin-bottom: 45px;
+        /* 年度分組區塊 */
+        .year-section {
+            margin-bottom: 40px;
         }
-        .month-label {
-            font-size: 20px;
-            color: #4a3b32;
+        .year-label {
+            font-size: 18px;
+            color: #8c7b70;
             font-weight: 700;
             display: flex;
             align-items: center;
@@ -75,71 +76,112 @@
             margin-bottom: 20px;
             padding-left: 5px;
         }
-        .month-label::after {
+        .year-label::after {
             content: '';
             flex: 1;
             height: 1px;
             background: #ead8c8;
         }
 
-        /* 心得列表條目排版 */
-        .diary-list { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 14px; 
-        }
-        .diary-item { 
-            background: #ffffff; 
-            border: 1px solid #ead8c8; 
-            border-radius: 16px; 
-            padding: 18px 24px; 
-            text-decoration: none; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 4px 12px rgba(74, 59, 50, 0.02); 
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
-        }
-        .diary-item:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 8px 20px rgba(181, 124, 76, 0.08); 
-            border-color: #d4a373; 
-        }
-        .diary-title { 
-            font-size: 17.5px; 
-            font-weight: 700; 
-            color: #4a3b32; 
-            margin: 0; 
-        }
-        .diary-date { 
-            font-size: 14px; 
-            color: #bfaaa0; 
-            font-weight: 500; 
-            flex-shrink: 0; 
-            margin-left: 15px; 
+        /* 網格佈局 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 24px;
         }
 
-        /* 未來月份的預留精緻樣式 */
-        .future-section {
-            opacity: 0.65;
+        /* 卡片通用樣式 */
+        .month-card {
+            background: #ffffff;
+            border: 1px solid #ead8c8;
+            border-radius: 20px;
+            padding: 28px 24px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(74, 59, 50, 0.03);
+            transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            height: 110px; /* 固定卡片高度讓排版更整齊 */
         }
-        .future-placeholder {
+        
+        /* 已啟用月份卡片的懸停特效 */
+        .month-card.active:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 30px rgba(181, 124, 76, 0.12);
+            border-color: #d4a373;
+        }
+        
+        /* 卡片頂部裝飾條 */
+        .month-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ead8c8;
+            transition: background 0.3s ease;
+        }
+        .month-card.active:hover::before {
+            background: #d4a373; 
+        }
+
+        /* 卡片內文 */
+        .month-title {
+            color: #4a3b32;
+            font-size: 20px;
+            margin: 0 0 14px 0;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .meta-info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        
+        .month-desc {
+            color: #7a6b60;
+            font-size: 14.5px;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .date-range {
+            color: #bfaaa0;
+            font-size: 12.5px;
+            margin: 0;
+        }
+
+        /* 未來月份的精緻樣式（帶有虛線、半透明、無懸停放大效果） */
+        .month-card.future {
+            border-style: dashed;
             background: #fafafa;
-            border: 1px dashed #ead8c8;
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
+            opacity: 0.6;
+            cursor: default;
+        }
+        .month-card.future .month-title {
             color: #8c7b70;
-            font-size: 15px;
+        }
+        .month-card.future .month-desc {
+            color: #bfaaa0;
             font-style: italic;
         }
 
         /* 手機板響應式優化 */
-        @media (max-width: 600px) { 
-            body { margin: 30px auto; padding: 0 16px; } 
-            .page-title { font-size: 26px; } 
-            .diary-item { flex-direction: column; align-items: flex-start; gap: 6px; } 
-            .diary-date { margin-left: 0; } 
+        @media (max-width: 600px) {
+            body { margin: 30px auto; padding: 0 16px; }
+            .page-title { font-size: 26px; }
+            .card-grid { grid-template-columns: 1fr; gap: 16px; }
+            .month-card { padding: 22px 20px; height: auto; }
         }
     </style>
 </head>
@@ -152,98 +194,75 @@
     
     <!-- 網頁大標題區塊 -->
     <header class="page-header">
-        <h1 class="page-title">浩婷每日心得 ‧ 總清單</h1>
+        <h1 class="page-title">浩婷每日心得 ‧ 月份總目錄</h1>
         <p class="page-subtitle">記錄紅塵實修與轉念的點滴心路歷程，讓心時時保持清靜。</p>
         <div class="header-line"></div>
     </header>
 
-    <!-- ==================== 12 月份區塊 ==================== -->
-    <div class="month-section future-section">
-        <div class="month-label">📅 2026 年 12 月份</div>
-        <div class="future-placeholder">❄️ 歲末感恩 ‧ 即將登場</div>
-    </div>
-
-    <!-- ==================== 11 月份區塊 ==================== -->
-    <div class="month-section future-section">
-        <div class="month-label">📅 2026 年 11 月份</div>
-        <div class="future-placeholder">🍂 秋末轉念 ‧ 敬請期待</div>
-    </div>
-
-    <!-- ==================== 10 月份區塊 ==================== -->
-    <div class="month-section future-section">
-        <div class="month-label">📅 2026 年 10 月份</div>
-        <div class="future-placeholder">🍁 豐盛資糧 ‧ 敬請期待</div>
-    </div>
-
-    <!-- ==================== 09 月份區塊 ==================== -->
-    <div class="month-section future-section">
-        <div class="month-label">📅 2026 年 09 月份</div>
-        <div class="future-placeholder">🌾 初秋實修 ‧ 敬請期待</div>
-    </div>
-
-    <!-- ==================== 08 月份區塊 ==================== -->
-    <div class="month-section future-section">
-        <div class="month-label">📅 2026 年 08 月份</div>
-        <div class="future-placeholder">☀️ 盛夏光芒 ‧ 敬請期待</div>
-    </div>
-
-    <!-- ==================== 07 月份區塊（最新連載中） ==================== -->
-    <div class="month-section">
-        <div class="month-label">📅 2026 年 07 月份</div>
+    <!-- 2026 年度區塊 -->
+    <div class="year-section">
+        <div class="year-label">✨ 2026 年</div>
         
-        <div class="diary-list">
-            <a href="diary20260702.html" class="diary-item">
-                <p class="diary-title">讓心清靜，調動靈魂深處的潛能與智慧</p>
-                <span class="diary-date">2026/07/02</span>
-            </a>
-        </div>
-    </div>
+        <div class="card-grid">
 
-    <!-- ==================== 06 月份區塊 ==================== -->
-    <div class="month-section">
-        <div class="month-label">📅 2026 年 06 月份</div>
-        
-        <div class="diary-list">
-            <a href="diary001.html" class="diary-item">
-                <p class="diary-title">初心不忘，寫下實修的第一步</p>
-                <span class="diary-date">2026/06/21</span>
+            <!-- 6月份卡片（已啟用：點擊會跳轉到 6月專屬清單） -->
+            <a href="list202606.html" class="month-card active">
+                <p class="month-title">📅 06 月份</p>
+                <div class="meta-info">
+                    <p class="month-desc">✍️ 共 10 篇實修心得</p>
+                    <p class="date-range">期間：06/21 - 06/30</p>
+                </div>
             </a>
-            <a href="diary002.html" class="diary-item">
-                <p class="diary-title">轉念功夫的日常練習與實踐</p>
-                <span class="diary-date">2026/06/22</span>
+
+            <!-- 7月份卡片（已啟用：點擊會跳轉到 7月專屬清單） -->
+            <a href="list202607.html" class="month-card active">
+                <p class="month-title">📅 07 月份</p>
+                <div class="meta-info">
+                    <p class="month-desc">✍️ 共 1 篇實修心得</p>
+                    <p class="date-range">期間：07/01 - 連載中</p>
+                </div>
             </a>
-            <a href="diary003.html" class="diary-item">
-                <p class="diary-title">謝天謝地，感受生命中的正向能量</p>
-                <span class="diary-date">2026/06/23</span>
-            </a>
-            <a href="diary004.html" class="diary-item">
-                <p class="diary-title">看見自己的盲點，突破修行的盲區</p>
-                <span class="diary-date">2026/06/24</span>
-            </a>
-            <a href="diary005.html" class="diary-item">
-                <p class="diary-title">在紅塵試煉中，尋找內心的平靜</p>
-                <span class="diary-date">2026/06/25</span>
-            </a>
-            <a href="diary006.html" class="diary-item">
-                <p class="diary-title">菁英會共修，與同修們的能量共振</p>
-                <span class="diary-date">2026/06/26</span>
-            </a>
-            <a href="diary007.html" class="diary-item">
-                <p class="diary-title">感恩導師引領，在愛中共勉成長</p>
-                <span class="diary-date">2026/06/27</span>
-            </a>
-            <a href="diary008.html" class="diary-item">
-                <p class="diary-title">太陽光芒注入，補足生命豐盛資糧</p>
-                <span class="diary-date">2026/06/28</span>
-            </a>
-            <a href="diary009.html" class="diary-item">
-                <p class="diary-title">真正需要管理的不是公司，而是自己的心</p>
-                <span class="diary-date">2026/06/29</span>
-            </a>
-            <a href="davis010.html" class="diary-item">
-                <p class="diary-title">越學越興奮！與 AI 協作開啟創意的無限可能</p>
-                <span class="diary-date">2026/06/30</span>
-            </a>
+
+            <!-- 8月份卡片（預留） -->
+            <div class="month-card future">
+                <p class="month-title">📅 08 月份</p>
+                <div class="meta-info">
+                    <p class="month-desc">☀️ 盛夏光芒 ‧ 敬請期待</p>
+                </div>
+            </div>
+
+            <!-- 9月份卡片（預留） -->
+            <div class="month-card future">
+                <p class="month-title">📅 09 月份</p>
+                <div class="meta-info">
+                    <p class="month-desc">🌾 初秋實修 ‧ 敬請期待</p>
+                </div>
+            </div>
+
+            <!-- 10月份卡片（預留） -->
+            <div class="month-card future">
+                <p class="month-title">📅 10 月份</p>
+                <div class="meta-info">
+                    <p class="month-desc">🍁 豐盛資糧 ‧ 敬請期待</p>
+                </div>
+            </div>
+
+            <!-- 11月份卡片（預留） -->
+            <div class="month-card future">
+                <p class="month-title">📅 11 月份</p>
+                <div class="meta-info">
+                    <p class="month-desc">🍂 秋末轉念 ‧ 敬請期待</p>
+                </div>
+            </div>
+
+            <!-- 12月份卡片（預留） -->
+            <div class="month-card future">
+                <p class="month-title">📅 12 月份</p>
+                <div class="meta-info">
+                    <p class="month-desc">❄️ 歲末感恩 ‧ 敬請期待</p>
+                </div>
+            </div>
+
         </div>
     </div>
 

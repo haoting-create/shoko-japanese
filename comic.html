@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang='zh-Hant'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>線上電子漫畫 ｜ 月份總目錄</title>
+    <style>
+        /* 延續與首頁完全對齊的 980px 純淨燕麥色風格 */
+        body {
+            font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #fffaf5; 
+            color: #4a3b32;
+            margin: 0;
+            padding: 0;
+        }
+        .wrap {
+            max-width: 980px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        /* 返回導覽 */
+        .back-nav { 
+            margin-bottom: 25px; 
+            font-size: 15px;
+        }
+        .back-link { 
+            text-decoration: none; 
+            color: #b57c4c; 
+            font-weight: 500; 
+            transition: color 0.3s ease; 
+        }
+        .back-link:hover { 
+            color: #d4a373; 
+        }
+
+        /* 標題大卡片 */
+        .header-card {
+            background: #fff;
+            border: 1px solid #ead8c8;
+            border-radius: 24px;
+            padding: 40px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(74, 59, 50, 0.02);
+            text-align: center;
+        }
+        .page-title { 
+            color: #4a3b32; 
+            font-size: 32px; 
+            font-weight: 700; 
+            margin: 0 0 10px 0; 
+        }
+        .page-subtitle {
+            color: #bfaaa0;
+            font-size: 16px;
+            margin: 0;
+            letter-spacing: 1px;
+        }
+        
+        /* 月份卡片清單大框 */
+        .list-card {
+            background: #fff;
+            border: 1px solid #ead8c8;
+            border-radius: 24px;
+            padding: 35px 30px;
+            box-shadow: 0 4px 12px rgba(74, 59, 50, 0.02);
+        }
+        .month-list { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 16px; 
+        }
+        
+        /* 月份單一條目樣式 */
+        .month-item { 
+            background: #ffffff; 
+            border: 1px solid #ead8c8; 
+            border-radius: 16px; 
+            padding: 22px 24px; 
+            text-decoration: none; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            transition: all 0.3s ease; 
+        }
+        .month-item:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 15px rgba(212, 163, 115, 0.1); 
+            border-color: #d4a373; 
+        }
+        /* 尚未開放的月份樣式 */
+        .month-item.disabled {
+            background: #fbfbfb;
+            border-color: #e6e6e6;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        .month-item.disabled:hover {
+            transform: none;
+            box-shadow: none;
+            border-color: #e6e6e6;
+        }
+
+        .month-title { 
+            font-size: 18px; 
+            font-weight: 700; 
+            color: #4a3b32; 
+            margin: 0; 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .month-item:hover .month-title {
+            color: #b57c4c;
+        }
+        .month-item.disabled:hover .month-title {
+            color: #4a3b32;
+        }
+
+        .month-status { 
+            font-size: 14px; 
+            color: #b57c4c; 
+            font-weight: 700; 
+            flex-shrink: 0; 
+        }
+        .month-item.disabled .month-status {
+            color: #bfaaa0;
+            font-weight: 400;
+        }
+
+        @media (max-width: 600px) { 
+            .header-card, .list-card { padding: 25px 20px; } 
+            .page-title { font-size: 24px; } 
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrap">
+
+    <!-- 頂部導覽 -->
+    <div class="back-nav">
+        <a href='index.html' class="back-link">← 回到首頁</a>
+    </div>
+    
+    <!-- 標題卡片 -->
+    <div class="header-card">
+        <h1 class="page-title">🎨 線上電子漫畫總目錄</h1>
+        <p class="page-subtitle">選取月份，翻閱精采的生活實修圖文盛宴</p>
+    </div>
+
+    <!-- 列表大卡片 -->
+    <div class="list-card">
+        <div class="month-list">
+            
+            <!-- 🌟 2026年07月（已開放，點擊可進去） -->
+            <a href="comic202607.html" class="month-item">
+                <p class="month-title">📅 2026 年 07 月 ｜ 電子漫畫書架</p>
+                <span class="month-status">立即線上翻閱 ➔</span>
+            </a>
+
+            <!-- 以下是預留月份（鎖定狀態，以後開放只需把 class="month-item disabled" 改成 class="month-item"，並補上 href 網址即可） -->
+            <div class="month-item disabled">
+                <p class="month-title">📅 2026 年 08 月 ｜ 電子漫畫書架</p>
+                <span class="month-status">尚未發布</span>
+            </div>
+
+            <div class="month-item disabled">
+                <p class="month-title">📅 2026 年 09 月 ｜ 電子漫畫書架</p>
+                <span class="month-status">尚未發布</span>
+            </div>
+
+            <div class="month-item disabled">
+                <p class="month-title">📅 2026 年 10 月 ｜ 電子漫畫書架</p>
+                <span class="month-status">尚未發布</span>
+            </div>
+
+            <div class="month-item disabled">
+                <p class="month-title">📅 2026 年 11 月 ｜ 電子漫畫書架</p>
+                <span class="month-status">尚未發布</span>
+            </div>
+
+            <div class="month-item disabled">
+                <p class="month-title">📅 2026 年 12 月 ｜ 電子漫畫書架</p>
+                <span class="month-status">尚未發布</span>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

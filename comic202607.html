@@ -63,7 +63,6 @@
             border-radius: 24px;
             padding: 35px 30px;
             box-shadow: 0 4px 12px rgba(74, 59, 50, 0.02);
-            margin-bottom: 25px;
         }
         
         /* 書格網路佈局 */
@@ -120,9 +119,6 @@
             border-radius: 12px;
             font-size: 14px;
             font-weight: 700;
-            cursor: pointer;
-            border: none;
-            width: 100%;
             transition: background 0.2s, transform 0.2s;
             box-shadow: 0 3px 8px rgba(212, 163, 115, 0.15);
         }
@@ -131,48 +127,12 @@
             transform: translateY(-1px);
         }
 
-        /* 📺 漫畫專屬巨幕展演卡片 */
-        .reader-card {
-            display: none; 
-            background: #fff;
-            border: 2px solid #d4a373;
-            border-radius: 24px;
-            padding: 25px;
-            box-shadow: 0 6px 20px rgba(181, 124, 76, 0.06);
-            margin-top: 25px;
-        }
-        .reader-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #b57c4c;
-            margin-top: 0;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        .iframe-container {
-            position: relative;
-            padding-bottom: 65%; 
-            height: 0;
-            overflow: hidden;
-            border-radius: 14px;
-            border: 1px solid #ead8c8;
-            background: #fafafa;
-        }
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
         /* 手機板響應式優化 */
         @media (max-width: 600px) { 
-            .header-card, .shelf-card, .reader-card { padding: 25px 20px; } 
+            .header-card, .shelf-card { padding: 25px 20px; } 
             .page-title { font-size: 22px; } 
             .book-grid { grid-template-columns: 1fr; gap: 16px; }
             .book-item { height: 130px; padding: 20px; }
-            .iframe-container { padding-bottom: 120%; } 
         }
     </style>
 </head>
@@ -188,7 +148,7 @@
     <!-- 標題卡片 -->
     <div class="header-card">
         <h1 class="page-title">🎨 2026 年 07 月 ｜ 電子漫畫書架</h1>
-        <p class="page-subtitle">點選下方書籍，即可在網頁內直接開啟精美翻頁閱讀，不再受外部跳轉干擾</p>
+        <p class="page-subtitle">點選下方書籍按鈕，即可開啟 FlipHTML5 3D 線上翻頁精美閱讀</p>
     </div>
 
     <!-- 🎪 7月份專屬線上書櫥 -->
@@ -201,7 +161,7 @@
                     <h3 class="book-title">📖 7/10日 生活學習日記</h3>
                     <span class="book-meta">主題：身心靈的微小累積</span>
                 </div>
-                <button onclick="openBook('7/10日 生活學習日記', 'gzri')" class="book-link-btn">在線直接翻閱 ➔</button>
+                <a href="https://online.fliphtml5.com/HaoTing1981/gzri/" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
             </div>
 
             <!-- 👑 7/09 漫畫書 -->
@@ -210,7 +170,7 @@
                     <h3 class="book-title">📖 7/09日 生活學習日記</h3>
                     <span class="book-meta">主題：細節修得好，福報不會少</span>
                 </div>
-                <button onclick="openBook('7/09日 生活學習日記', 'vwxm')" class="book-link-btn">在線直接翻閱 ➔</button>
+                <a href="https://online.fliphtml5.com/HaoTing1981/vwxm/" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
             </div>
 
             <!-- 👑 7/08 漫畫書 -->
@@ -219,7 +179,7 @@
                     <h3 class="book-title">📖 7/08日 生活學習日記</h3>
                     <span class="book-meta">主題：熱情互相感染、善意流動</span>
                 </div>
-                <button onclick="openBook('7/08日 生活學習日記', 'qpcf')" class="book-link-btn">在線直接翻閱 ➔</button>
+                <a href="https://online.fliphtml5.com/HaoTing1981/qpcf/" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
             </div>
 
             <!-- 👑 7/07 漫畫書 -->
@@ -228,7 +188,7 @@
                     <h3 class="book-title">📖 7/07日 生活學習日記</h3>
                     <span class="book-meta">主題：心中自然有所拿捏</span>
                 </div>
-                <button onclick="openBook('7/07日 生活學習日記', 'llwx')" class="book-link-btn">在線直接翻閱 ➔</button>
+                <a href="https://online.fliphtml5.com/HaoTing1981/llwx/" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
             </div>
 
             <!-- 👑 7/06 漫畫書 -->
@@ -237,40 +197,13 @@
                     <h3 class="book-title">📖 7/06日 生活學習日記</h3>
                     <span class="book-meta">主題：累積信任，誠信至上</span>
                 </div>
-                <button onclick="openBook('7/06日 生活學習日記', 'lrhx')" class="book-link-btn">在線直接翻閱 ➔</button>
+                <a href="https://online.fliphtml5.com/HaoTing1981/lrhx/" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
             </div>
 
         </div>
     </div>
 
-    <!-- 📺 漫畫原地展演大巨幕 (預設隱藏) -->
-    <div id="comic-reader" class="reader-card">
-        <h2 id="reader-book-title" class="reader-title">正在閱讀書籍</h2>
-        <div class="iframe-container">
-            <iframe id="book-frame" src="" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
-        </div>
-    </div>
-
 </div>
-
-<!-- 💡 最終整合安全直讀核心控制代碼 -->
-<script>
-function openBook(title, bookCode) {
-    var readerBox = document.getElementById('comic-reader');
-    var bookFrame = document.getElementById('book-frame');
-    var titleDisplay = document.getElementById('reader-book-title');
-    
-    // 💡 終極安全機制：全部指向官方 html5 無干擾直讀伺服器網址
-    var secureEmbedUrl = "https://html5.fliphtml5.com/HaoTing1981/" + bookCode + "/";
-    
-    titleDisplay.innerHTML = "📖 現正線上翻閱：《" + title + "》";
-    bookFrame.src = secureEmbedUrl;
-    readerBox.style.display = "block";
-    
-    // 絲滑對齊巨幕
-    readerBox.scrollIntoView({ behavior: 'smooth' });
-}
-</script>
 
 </body>
 </html>

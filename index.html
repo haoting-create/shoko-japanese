@@ -153,6 +153,48 @@
   text-align: left; /* 提示文字靠左更好閱讀 */
   display: inline-block;
 }
+
+/* ==========================================
+   全新設計：4 張卡片黃金比例雙列排版 (2x2 Grid)
+========================================== */
+.entry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 電腦版改為完美的 2x2 雙列排版 */
+  gap: 30px; /* 拉大卡片間距，看起來更大器、不擁擠 */
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+/* 讓卡片本身的高度與留白更具有設計感 */
+.entry-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border: 1px solid #f0e4dc;
+  border-radius: 20px;
+  padding: 35px 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(63,42,36,0.02);
+}
+
+.entry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(123,76,54,0.08);
+  border-color: #e2b1a2;
+}
+
+/* 手機版 RWD 自動切換為垂直單列 */
+@media (max-width: 768px) {
+  .entry-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .entry-card {
+    padding: 25px 20px;
+  }
+}
 </style>
 </head>
 <body>
@@ -197,7 +239,7 @@
 
       <div>
         <div class="hero-note">
-          💡 <strong>首頁導覽提示：</strong> 本頁為學習入口。真正的完整課程、中文心得、知識庫與跟讀練習，都可以點擊下方對應的卡片直接進入喔！
+          💡 <strong>首頁導覽提示：</strong> 本頁為學習入口。真正的完整課程、中文心得與跟讀練習，都可以點擊下方對應的卡片直接進入喔！
         </div>
       </div>
     </div>
@@ -210,57 +252,42 @@
   </div>
 
   <section class="entry-grid">
+    <!-- 區域 1：每日日文課程 -->
     <a class="entry-card" href="lessons.html">
       <div>
-        <div class="entry-illust">🇯🇵</div>
-        <h3>每日日文課程</h3>
-        <p>從中文心得出發，延伸成日文 Blog、單字、句型、文法、文化與跟讀。</p>
+        <div class="entry-illust" style="font-size: 2.2rem; margin-bottom: 15px;">🇯🇵</div>
+        <h3 style="font-size: 1.4rem; color: #3f2a24; margin-bottom: 12px;">每日日文課程</h3>
+        <p style="color: #6e554f; line-height: 1.6; margin-bottom: 20px;">從中文心得出發，延伸成日文 Blog、單字、句型、文法、文化與跟讀。</p>
       </div>
       <span class="btn">開始學習 →</span>
     </a>
 
+    <!-- 區域 2：浩婷每日中文心得 -->
     <a class="entry-card" href="diary.html">
       <div>
-        <div class="entry-illust">📝</div>
-        <h3>浩婷每日中文心得</h3>
-        <p>保存完整中文心得原文，搭配每日一張火柴人漫畫，方便朋友閱讀分享。</p>
+        <div class="entry-illust" style="font-size: 2.2rem; margin-bottom: 15px;">📝</div>
+        <h3 style="font-size: 1.4rem; color: #3f2a24; margin-bottom: 12px;">浩婷每日中文心得</h3>
+        <p style="color: #6e554f; line-height: 1.6; margin-bottom: 20px;">保存完整中文心得原文，搭配每日一張火柴人漫畫，方便朋友閱讀分享。</p>
       </div>
       <span class="btn rose">閱讀心得 →</span>
     </a>
 
-    <a class="entry-card" href="kana.html">
+    <!-- 區域 3：電子漫畫區 -->
+    <a class="entry-card" href="comic.html">
       <div>
-        <div class="entry-illust">🌸</div>
-        <h3>五十音教室</h3>
-        <p>第一次學日文的人，可以從平假名、片假名、濁音與發音練習開始。</p>
-      </div>
-      <span class="btn">從基礎開始 →</span>
-    </a>
-
-        <a class="entry-card" href="list202607.html">
-      <div>
-        <div class="entry-illust">📚</div>
-        <h3>日文知識庫</h3>
-        <p>單字、句型、文法與文化會持續累積。重複出現時，回到第一次完整學習處複習。</p>
-      </div>
-      <span class="btn">前往知識庫 →</span>
-    </a>
-
-        <a class="entry-card" href="comic.html">
-      <div>
-        <div class="entry-illust">🎨</div>
-        <h3>電子漫畫區</h3>
-        <p>將深刻的生活學習日記，轉化為唯美細緻的線上 3D 翻頁漫畫書。</p>
+        <div class="entry-illust" style="font-size: 2.2rem; margin-bottom: 15px;">🎨</div>
+        <h3 style="font-size: 1.4rem; color: #3f2a24; margin-bottom: 12px;">電子漫畫區</h3>
+        <p style="color: #6e554f; line-height: 1.6; margin-bottom: 20px;">將深刻的生活學習日記，轉化為唯美細緻的線上 3D 翻頁漫畫書。</p>
       </div>
       <span class="btn">觀看漫畫 →</span>
     </a>
 
-
+    <!-- 區域 4：關於網站 -->
     <a class="entry-card" href="about.html">
       <div>
-        <div class="entry-illust">☕</div>
-        <h3>關於網站</h3>
-        <p>認識浩婷さん與ショコさん，以及這個陪伴式日文學習網站的理念。</p>
+        <div class="entry-illust" style="font-size: 2.2rem; margin-bottom: 15px;">☕</div>
+        <h3 style="font-size: 1.4rem; color: #3f2a24; margin-bottom: 12px;">關於網站</h3>
+        <p style="color: #6e554f; line-height: 1.6; margin-bottom: 20px;">認識浩婷さん與ショコさん，以及這個陪伴式日文學習網站的理念。</p>
       </div>
       <span class="btn rose">了解更多 →</span>
     </a>

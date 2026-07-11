@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ショコ式日本語 - Lesson 17</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            background-color: #fcf8f6;
+            color: #4a4a4a;
+            line-height: 1.8;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid #f5ded6;
+        }
+        .title { color: #d67a7a; font-size: 24px; font-weight: bold; }
+        .section {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+        h2 { color: #d67a7a; font-size: 18px; border-left: 4px solid #e8a7a1; padding-left: 10px; margin-top: 0; }
+        .japanese-text { font-size: 18px; color: #2c3e50; margin-bottom: 10px; position: relative; }
+        .audio-btn {
+            background-color: #f7ded9;
+            border: none;
+            color: #b85c5c;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+        .audio-btn:hover { background-color: #e8a7a1; color: white; }
+        .chinese-text { font-size: 15px; color: #666; margin-bottom: 15px; background: #fafafa; padding: 10px; border-radius: 6px; }
+        .badge { background: #e8a7a1; color: white; padding: 2px 6px; border-radius: 4px; font-size: 12px; margin-right: 5px; }
+        .badge.green { background: #8bc34a; }
+        .badge.star { background: #ffb300; }
+        .ans-btn { background: #4a4a4a; color: white; border: none; padding: 8px 15px; border-radius: 6px; cursor: pointer; width: 100%; }
+        .ans-content { display: none; background: #f5f5f5; padding: 15px; margin-top: 10px; border-radius: 6px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="title">🌸 ショコ式日本語 v3.0</div>
+        <p>Lesson 17 : 家族企業與誠信的重量</p>
+    </div>
+
+    <!-- 第三章：核心 Blog -->
+    <div class="section">
+        <h2>③ 📖 浩婷さん Blog (沉浸閱讀)</h2>
+        <p><i>(全日文，點擊下方按鈕可聽不同倍速發音)</i></p>
+        <div class="japanese-text" id="blog-text">
+            今日、朝早く会社に行った。昨日残業した時、今日出荷する商品の数が足りないって気づいたから。急いで仕上げをしないと間に合わない！でも、会社に着いてびっくり。「あれ？金型がない…！」一瞬すごく焦った。「え、今日どうしよう？」って。やっと無事に出荷できて、ほっとした〜。
+        </div>
+        <button class="audio-btn" onclick="speakText('blog-text', 0.8)">🔊 一般速 0.8</button>
+        <button class="audio-btn" onclick="speakText('blog-text', 0.72)">🔊 Shadowing 0.72</button>
+    </div>
+
+    <!-- 第五章：今日單字 -->
+    <div class="section">
+        <h2>⑤ 📚 今日單字精選</h2>
+        <div>
+            <span class="badge star">本課重點</span><strong>金型（かながた）</strong><br>
+            <span class="chinese-text">中文：模具</span>
+            <p class="japanese-text" id="w1">あれ？金型がない…！</p>
+            <button class="audio-btn" onclick="speakText('w1', 0.8)">🔊 發音 0.8</button>
+        </div>
+        <hr style="border: 0.5px solid #eee;">
+        <div style="margin-top: 15px;">
+            <span class="badge green">必學</span><strong>ほっとした</strong><br>
+            <span class="chinese-text">中文：鬆了一口氣</span>
+            <p class="japanese-text" id="w2">やっと無事に出荷できて、ほっとした〜。</p>
+            <button class="audio-btn" onclick="speakText('w2', 0.8)">🔊 發音 0.8</button>
+        </div>
+    </div>
+
+    <!-- 第九章：Shadowing 跟讀 -->
+    <div class="section">
+        <h2>⑨ 🎧 Shadowing 句子跟讀</h2>
+        <p class="japanese-text" id="s1">やっと無事に出荷できて、ほっとした〜。</p>
+        <button class="audio-btn" onclick="speakText('s1', 0.8)">🔊 一般速 0.8</button>
+        <button class="audio-btn" onclick="speakText('s1', 0.72)">🔊 跟讀速 0.72</button>
+    </div>
+
+    <!-- 第十章：Output 練習 -->
+    <div class="section">
+        <h2>⑩ ✍️ Output 練習</h2>
+        <p>請試著用 <b>「やっと」</b> 造一個生活中的句子吧！</p>
+        <button class="ans-btn" onclick="toggleAns()">點擊展開參考答案</button>
+        <div class="ans-content" id="ans-box">
+            <b>🌸 參考答案：</b><br>
+            <span class="japanese-text" id="ans-txt">やっと今週の仕事が終わった！</span><br>
+            (這週的工作終於結束了！)<br>
+            <button class="audio-btn" onclick="speakText('ans-txt', 0.8)">🔊 聽答案發音</button>
+        </div>
+    </div>
+
+    <script>
+        // 核心功能：Web Speech API 瀏覽器自動 AI 發音與變速
+        function speakText(elementId, speed) {
+            window.speechSynthesis.cancel(); // 先停止之前的發音
+            var text = document.getElementById(elementId).innerText;
+            
+            var utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP'; // 設定為日文
+            utterance.rate = speed;   // 套用更新後的 0.8 與 0.72 倍速
+            
+            window.speechSynthesis.speak(utterance);
+        }
+
+        // 摺疊展開控制
+        function toggleAns() {
+            var box = document.getElementById('ans-box');
+            if(box.style.display === 'block') {
+                box.style.display = 'none';
+            } else {
+                box.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

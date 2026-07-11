@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>2026 年 6 月日文課程｜ショコさん日本語教室 Online</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Noto Sans JP", sans-serif;
+      background: #fffaf5;
+      color: #3f2a24;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 34px 20px 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      background: #ffffff;
+      color: #98655b;
+      border: 1px solid #ead8c8;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: #fff0ea;
+      border-color: #efb6a6;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 32px;
+      padding: 38px 30px;
+      background: linear-gradient(135deg, #f8f4dc, #fffaf3);
+      border: 1px solid #e9ddbb;
+      border-radius: 30px;
+      box-shadow: 0 12px 32px rgba(87, 58, 47, 0.08);
+    }
+
+    .hero::after {
+      content: "🌿";
+      position: absolute;
+      right: 28px;
+      bottom: 8px;
+      font-size: 6rem;
+      opacity: 0.12;
+      transform: rotate(-8deg);
+    }
+
+    .month-badge {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 15px;
+      background: #eef0cc;
+      color: #697042;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1.3;
+    }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0;
+      color: #725f53;
+      font-size: 1.05rem;
+    }
+
+    .summary-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .summary-item {
+      position: relative;
+      z-index: 1;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(210, 197, 159, 0.9);
+      border-radius: 999px;
+      color: #716443;
+      font-weight: 700;
+    }
+
+    .section-title {
+      margin: 36px 0 18px;
+      font-size: 1.55rem;
+      color: #523b32;
+    }
+
+    .lesson-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    .card {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      padding: 25px;
+      background: #ffffff;
+      border: 1px solid #ead8c8;
+      border-radius: 24px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.055);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #efb9aa;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      bottom: -65px;
+      width: 165px;
+      height: 165px;
+      background: rgba(255, 233, 222, 0.5);
+      border-radius: 50%;
+    }
+
+    .lesson-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      background: #ffe8ef;
+      color: #b34f69;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .date {
+      color: #8b6b61;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .card h2 {
+      position: relative;
+      z-index: 1;
+      margin: 16px 0 8px;
+      font-size: 1.45rem;
+      line-height: 1.5;
+    }
+
+    .card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: #755f57;
+    }
+
+    .card-footer {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #f59e7a;
+      color: #ffffff;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .bottom-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 38px;
+      padding-top: 26px;
+      border-top: 1px solid #ead8c8;
+    }
+
+    .bottom-nav a {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 17px;
+      background: #ffffff;
+      color: #98655b;
+      border: 1px solid #ead8c8;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .bottom-nav a:hover {
+      background: #fff0ea;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #a2877d;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 24px 16px 44px;
+      }
+
+      .hero {
+        padding: 30px 22px;
+        border-radius: 24px;
+      }
+
+      .hero::after {
+        right: 8px;
+        font-size: 4.8rem;
+      }
+
+      .card {
+        padding: 22px 20px;
+      }
+
+      .lesson-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .card-footer {
+        justify-content: flex-start;
+      }
+
+      .bottom-nav {
+        flex-direction: column;
+      }
+
+      .bottom-nav a {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <nav class="nav-links" aria-label="頁面導覽">
+      <a class="nav-link" href="index.html">
+        ← 回首頁
+      </a>
+
+      <a class="nav-link" href="lessons.html">
+        ← 回月份總目錄
+      </a>
+    </nav>
+
+    <header class="hero">
+      <div class="month-badge">🌿 2026 / 06</div>
+
+      <h1>六月日文課程</h1>
+
+      <p>
+        從每天真實的生活故事出發，學習自然日文、生活單字、
+        實用句型、文法與 Shadowing。六月共收錄 Lesson001～Lesson010。
+      </p>
+
+      <div class="summary-bar">
+        <span class="summary-item">📘 共 10 課</span>
+        <span class="summary-item">📅 6 月 21 日～6 月 30 日</span>
+        <span class="summary-item">🌸 生活日文學習</span>
+      </div>
+    </header>
+
+    <h2 class="section-title">📚 六月課程列表</h2>
+
+    <section class="lesson-list">
+
+      <!-- Lesson001 -->
+      <a class="card" href="lesson001.html">
+        <div class="lesson-top">
+          <span class="badge">🌸 Lesson001</span>
+          <span class="date">2026 / 06 / 21</span>
+        </div>
+
+        <h2>AI 栄養士が家に来たみたい！</h2>
+
+        <p>
+          從「AI 協助規劃爺爺飲食」這篇中文心得出發，
+          學習自然日文、單字、句型、文法與 Shadowing。
+        </p>
+
+        <div class="card-footer">
+          <span class="btn">開始學習 →</span>
+        </div>
+      </a>
+
+      <!-- Lesson002 -->
+      <a class="card" href="lesson002.html">
+        <div class="lesson-top">
+          <span class="badge">🌸 Lesson002</span>
+          <span class="date">2026 / 06 / 22</span>
+        </div>
+
+        <h2>心の中の「ものさし」</h2>
+
+        <p>
+          從「斷捨離損友」這篇心得出發，
+          學習如何用自然日文表達人際關係、自我反省與價值觀。
+        </p>
+
+        <div class="card-footer">
+          <span class="btn">開始學習 →</span>
+        </div>
+      </a>
+
+      <!-- Lesson003 -->
+      <a class="card" href="lesson003.html">
+        <div class="lesson-top">
+          <span class="badge">🌸 Lesson003</span>
+          <span class="date">2026 / 06 / 23</span>
+        </div>
+
+        <h2>自分を大切にする修行</h2>
+
+        <p>
+          從「修煉即修心，離苦即得樂」這篇心得出發，
+          學習如何用自然日文表達疲憊、修行與身心調整。
+        </p>
+
+        <div class="card-footer">
+          <span class="btn">開始學習 →</span>
+        </div>
+      </a>
+
+      <!-- Lesson004 -->
+      <a class="card" href="lesson004.html">
+        <div class="lesson-top">
+          <span class="badge">🌸 Lesson004</span>
+          <span class="date">2026 / 06 / 24</span>
+        </div>
+
+        <h2>心に電気をチャージした夜</h2>
+
+        <p>
+          從順利的工作與菁英會分享出發，
+          學習如何用自然日文表達充電、感動、安排與成長。
+        </p>
+
+        <div class="card-footer">
+          <span class="btn">開始學習 →</span>
+        </div>
+      </a>
+
+      <!-- Lesson005 -->
+      <a class="card" href="lesson005.html">
+        <div class="lesson-top">
+          <span class="badge">🌸 Lesson005</span>
+          <span class="date">2026 / 06 / 25</span>
+        </div>
+
+        <h2>雨の中でも、心はぶれない</h2>
+
+        <p>
+          從大雨中的菁英會出發，
+          學習如何用自然日文表達外境、選擇、初心與不退縮的心。
+        </p>
+
+        <div class="card-footer">
+          <span class="btn">開始學習 →</span>
+        </div>
+      </a>
+
+      <!-- Lesson006 -->
+      <a class="card" href="lesson006.html">
+        <div class="lesson-top">
+          <span class="badge">🌸 Lesson006</span>
+          <span class="date">2026 / 06 / 26</span>
+        </div>
+
+        <h2>手放すことで、本当に大切なものが見えてきた</h2>
+
+        <p>
+          從公司庫存與爸爸健康的抉擇出發，
+          學習如何用自然日文表達放下、止損、價值衡量與真正的財富。
+        </p>
+
+        <div class="card-footer">
+          <span class="btn">開始學習 →</span>
+        </div>
+      </a>
+
+      <!-- Lesson007 -->
+      <a class="card" href="lesson007.html">
+        <div class="lesson-top">
+          <span class="badge">🌸 Lesson007</span>
+          <span class="date">2026 / 06 / 27</span>
+        </div>
+
+        <h2>変わるのは、いつも自分から</h2>
+
+        <p>
+          從兩場志工任務與生命分享出發，
+          學習如何用自然日文表達服務、家庭改變與善的影響力。
+        </p>
+
+        <div class="card-footer">
+          <span class="btn">開始學習 →</span>
+        </div>
+      </a>
+
+      <!-- Lesson008 -->
+      <a class="card" href="lesson008.html">
+        <div class="lesson-top">
+          <span class="badge">🌸 Lesson008</span>
+          <span class="date">2026 / 06 / 28</span>
+        </div>
+
+        <h2>決めたら、あとは一つずつ進むだけ</h2>
+
+        <p>
+          從星期日加班趕工出貨出發，
+          學習如何用自然日文表達專注、決心、效率與善的種子。
+        </p>
+
+        <div class="card-footer">
+          <span class="btn">開始學習 →</span>
+        </div>
+      </a>
+
+      <!-- Lesson009 -->
+      <a class="card" href="lesson009.html">
+        <div class="lesson-top">
+          <span class="badge">🌸 Lesson009</span>
+          <span class="date">2026 / 06 / 29</span>
+        </div>
+
+        <h2>言葉を守ることは、心を守ること</h2>
+
+        <p>
+          從職場霸凌圖片與共修提醒出發，
+          學習如何用自然日文表達言語、情緒管理、口德與初心。
+        </p>
+
+        <div class="card-footer">
+          <span class="btn">開始學習 →</span>
+        </div>
+      </a>
+
+      <!-- Lesson010 -->
+      <a class="card" href="lesson010.html">
+        <div class="lesson-top">
+          <span class="badge">🌸 Lesson010</span>
+          <span class="date">2026 / 06 / 30</span>
+        </div>
+
+        <h2>AIが、新しい世界への扉を開いてくれた</h2>
+
+        <p>
+          從一整天學習 AI 的驚喜出發，
+          學習如何用自然日文表達創作、學習、網站製作與開始的勇氣。
+        </p>
+
+        <div class="card-footer">
+          <span class="btn">開始學習 →</span>
+        </div>
+      </a>
+
+    </section>
+
+    <nav class="bottom-nav" aria-label="月份切換">
+      <a href="lessons.html">
+        ← 回月份總目錄
+      </a>
+
+      <a href="lessons-2026-07.html">
+        前往七月課程 →
+      </a>
+    </nav>
+
+    <footer>
+      ショコさん日本語教室 Online ｜ 2026 年 6 月日文課程 🌸
+    </footer>
+
+  </main>
+</body>
+</html>

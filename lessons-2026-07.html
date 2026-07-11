@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>2026 年 7 月日文課程｜ショコさん日本語教室 Online</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Noto Sans JP", sans-serif;
+      background: #fffaf5;
+      color: #3f2a24;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 34px 20px 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      background: #ffffff;
+      color: #98655b;
+      border: 1px solid #ead8c8;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+
+    .nav-link:hover {
+      background: #fff0ea;
+      border-color: #efb6a6;
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 32px;
+      padding: 38px 30px;
+      background: linear-gradient(135deg, #fff2cf, #fff9ee);
+      border: 1px solid #efdca8;
+      border-radius: 30px;
+      box-shadow: 0 12px 32px rgba(87, 58, 47, 0.08);
+    }
+
+    .hero::after {
+      content: "🌻";
+      position: absolute;
+      right: 24px;
+      bottom: 4px;
+      font-size: 6.2rem;
+      opacity: 0.14;
+      transform: rotate(7deg);
+    }
+
+    .month-badge {
+      display: inline-block;
+      margin-bottom: 14px;
+      padding: 7px 15px;
+      background: #fff0b8;
+      color: #8b6a1f;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1.3;
+    }
+
+    .hero p {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0;
+      color: #725f53;
+      font-size: 1.05rem;
+    }
+
+    .summary-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .summary-item {
+      position: relative;
+      z-index: 1;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(225, 196, 111, 0.8);
+      border-radius: 999px;
+      color: #7c642d;
+      font-weight: 700;
+    }
+
+    .section-title {
+      margin: 36px 0 18px;
+      font-size: 1.55rem;
+      color: #523b32;
+    }
+
+    .lesson-list {
+      display: grid;
+      gap: 20px;
+    }
+
+    .card {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      padding: 25px;
+      background: #ffffff;
+      border: 1px solid #ead8c8;
+      border-radius: 24px;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.055);
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: #efb9aa;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.09);
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      right: -50px;
+      bottom: -65px;
+      width: 165px;
+      height: 165px;
+      background: rgba(255, 235, 184, 0.45);
+      border-radius: 50%;
+    }
+
+    .lesson-top {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      background: #ffe8ef;
+      color: #b34f69;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .date {
+      color: #8b6b61;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .card h2 {
+      position: relative;
+      z-index: 1;
+      margin: 16px 0 8px;
+      font-size: 1.45rem;
+      line-height: 1.5;
+    }
+
+    .card p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: #755f57;
+    }
+
+    .card-footer {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 18px;
+      background: #f59e7a;
+      color: #ffffff;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .update-box {
+      margin-top: 28px;
+      padding: 24px;
+      background: linear-gradient(135deg, #fffdf3, #fff8e8);
+      border: 1px dashed #dfc982;
+      border-radius: 22px;
+      color: #75613c;
+    }
+
+    .update-box h2 {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+      color: #755d22;
+    }
+
+    .update-box p {
+      margin: 0;
+    }
+
+    .bottom-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 38px;
+      padding-top: 26px;
+      border-top: 1px solid #ead8c8;
+    }
+
+    .bottom-nav a {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 17px;
+      background: #ffffff;
+      color: #98655b;
+      border: 1px solid #ead8c8;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .bottom-nav a:hover {
+      background: #fff0ea;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #a2877d;
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        padding: 24px 16px 44px;
+      }
+
+      .hero {
+        padding: 30px 22px;
+        border-radius: 24px;
+      }
+
+      .hero::after {
+        right: 6px;
+        font-size: 4.8rem;
+      }
+
+      .card {
+        padding: 22px 20px;
+      }
+
+      .lesson-top {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .card-footer {
+        justify-content: flex-start;
+      }
+
+      .bottom-nav {
+        flex-direction: column;
+      }
+
+      .bottom-nav a {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap">
+
+    <nav class="nav-links" aria-label="頁面導覽">
+      <a class="nav-link" href="index.html">
+        ← 回首頁
+      </a>
+
+      <a class="nav-link" href="lessons.html">
+        ← 回月份總目錄
+      </a>
+    </nav>
+
+    <header class="hero">
+      <div class="month-badge">🌻 2026 / 07</div>
+
+      <h1>七月日文課程</h1>
+
+      <p>
+        延續每天的生活故事，用自然、簡單又有溫度的日文，
+        學習實用單字、生活句型、句子拆解與 Shadowing。
+        七月份的 Lesson 將持續更新。
+      </p>
+
+      <div class="summary-bar">
+        <span class="summary-item">📘 Lesson011 起</span>
+        <span class="summary-item">📅 2026 年 7 月</span>
+        <span class="summary-item">🌸 持續更新中</span>
+      </div>
+    </header>
+
+    <h2 class="section-title">📚 七月課程列表</h2>
+
+    <section class="lesson-list">
+
+      <!-- Lesson011 -->
+      <a class="card" href="lesson011.html">
+        <div class="lesson-top">
+          <span class="badge">🌸 Lesson011</span>
+          <span class="date">2026 / 07 / 01</span>
+        </div>
+
+        <h2>静かな時間が、自分を育ててくれる</h2>
+
+        <p>
+          從富貴菁英會導讀與清靜體會出發，
+          學習如何用自然日文表達安靜、潛能、天分與內在智慧。
+        </p>
+
+        <div class="card-footer">
+          <span class="btn">開始學習 →</span>
+        </div>
+      </a>
+
+      <!--
+        新增 Lesson012 時，可複製下面這個範例：
+
+        <a class="card" href="lesson012.html">
+          <div class="lesson-top">
+            <span class="badge">🌸 Lesson012</span>
+            <span class="date">2026 / 07 / 02</span>
+          </div>
+
+          <h2>在這裡放 Lesson012 的日文標題</h2>
+
+          <p>
+            在這裡放 Lesson012 的中文課程介紹。
+          </p>
+
+          <div class="card-footer">
+            <span class="btn">開始學習 →</span>
+          </div>
+        </a>
+      -->
+
+    </section>
+
+    <section class="update-box">
+      <h2>🌻 七月課程持續更新中</h2>
+
+      <p>
+        之後完成 Lesson012、Lesson013 以及其他七月份課程時，
+        只要繼續新增在上方的課程列表中，就能依照日期完整排列。
+      </p>
+    </section>
+
+    <nav class="bottom-nav" aria-label="月份切換">
+      <a href="lessons-2026-06.html">
+        ← 回六月課程
+      </a>
+
+      <a href="lessons.html">
+        回月份總目錄
+      </a>
+    </nav>
+
+    <footer>
+      ショコさん日本語教室 Online ｜ 2026 年 7 月日文課程 🌸
+    </footer>
+
+  </main>
+</body>
+</html>

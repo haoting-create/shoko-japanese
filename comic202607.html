@@ -1,227 +1,98 @@
-<!doctype html>
-<html lang='zh-Hant'>
-<head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width,initial-scale=1'>
-    <title>2026年07月 ｜ 線上電子漫畫書架</title>
-    <style>
-        /* 延續與首頁、清單完全對齊的 980px 純淨燕麥色風格 */
-        body {
-            font-family: "Noto Sans TC", -apple-system, BlinkMacSystemFont, sans-serif;
-            background: #fffaf5; 
-            color: #4a3b32;
-            margin: 0;
-            padding: 0;
-        }
-        .wrap {
-            max-width: 980px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-        
-        /* 返回導覽 */
-        .back-nav { 
-            margin-bottom: 25px; 
-            font-size: 15px;
-        }
-        .back-link { 
-            text-decoration: none; 
-            color: #b57c4c; 
-            font-weight: 500; 
-            transition: color 0.3s ease; 
-        }
-        .back-link:hover { 
-            color: #d4a373; 
-        }
+<div class="book-grid">
 
-        /* 標題大卡片 */
-        .header-card {
-            background: #fff;
-            border: 1px solid #ead8c8;
-            border-radius: 24px;
-            padding: 35px 30px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 12px rgba(74, 59, 50, 0.02);
-            text-align: center;
-        }
-        .page-title { 
-            color: #4a3b32; 
-            font-size: 28px; 
-            font-weight: 700; 
-            margin: 0 0 8px 0; 
-        }
-        .page-subtitle {
-            color: #bfaaa0;
-            font-size: 15px;
-            margin: 0;
-        }
-        
-        /* 📚 精緻漫畫書棚區 */
-        .shelf-card {
-            background: #fff;
-            border: 1px solid #ead8c8;
-            border-radius: 24px;
-            padding: 35px 30px;
-            box-shadow: 0 4px 12px rgba(74, 59, 50, 0.02);
-        }
-        
-        /* 書格網路佈局 */
-        .book-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-            gap: 22px;
-        }
-        
-        /* 單本漫畫書籍卡片樣式 */
-        .book-item {
-            background: #fffbf7;
-            border: 1px solid #f0e2d5;
-            border-radius: 18px;
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 150px;
-            transition: all 0.3s ease;
-        }
-        .book-item:hover {
-            transform: translateY(-4px);
-            border-color: #d4a373;
-            box-shadow: 0 6px 18px rgba(181, 124, 76, 0.08);
-        }
-        
-        .book-info {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-        .book-title {
-            font-size: 17px;
-            font-weight: 700;
-            color: #4a3b32;
-            margin: 0;
-            line-height: 1.4;
-        }
-        .book-meta {
-            font-size: 13.5px;
-            color: #bfaaa0;
-            font-weight: 400;
-        }
-        
-        /* 翻頁閱讀按鈕 */
-        .book-link-btn {
-            display: inline-block;
-            text-align: center;
-            background: #d4a373; 
-            color: #fff;
-            text-decoration: none;
-            padding: 11px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 700;
-            transition: background 0.2s, transform 0.2s;
-            box-shadow: 0 3px 8px rgba(212, 163, 115, 0.15);
-        }
-        .book-link-btn:hover {
-            background: #b57c4c;
-            transform: translateY(-1px);
-        }
-
-        /* 手機板響應式優化 */
-        @media (max-width: 600px) { 
-            .header-card, .shelf-card { padding: 25px 20px; } 
-            .page-title { font-size: 22px; } 
-            .book-grid { grid-template-columns: 1fr; gap: 16px; }
-            .book-item { height: 130px; padding: 20px; }
-        }
-    </style>
-</head>
-<body>
-
-<div class="wrap">
-
-    <!-- 頂部導覽 -->
-    <div class="back-nav">
-        <a href='comic.html' class="back-link">← 返回電子漫畫月份目錄</a>
-    </div>
-    
-    <!-- 標題卡片 -->
-    <div class="header-card">
-        <h1 class="page-title">🎨 2026 年 07 月 ｜ 電子漫畫書架</h1>
-        <p class="page-subtitle">點選下方書籍按鈕，即可開啟 FlipHTML5 3D 線上翻頁精美閱讀</p>
-    </div>
-
-    <!-- 🎪 7月份專屬線上書櫥 -->
-    <div class="shelf-card">
-        <div class="book-grid">
-
-            <!-- 👑 7/12 漫畫書 (預留欄位) -->
-            <div class="book-item">
-                <div class="book-info">
-                    <h3 class="book-title">📖 7/12日 生活學習日記</h3>
-                    <span class="book-meta">主題：請在此輸入今日主題</span>
-                </div>
-                <a href="https://fliphtml5.com" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
-            </div>
-
-            <!-- 👑 7/11 漫畫書 -->
-            <div class="book-item">
-                <div class="book-info">
-                    <h3 class="book-title">📖 7/11日 生活學習日記</h3>
-                    <span class="book-meta">主題：颱風中的感恩，完成「有欠」的人生功課</span>
-                </div>
-                <a href="https://online.fliphtml5.com/HaoTing1981/gwwd/" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
-            </div>
-            
-            <!-- 👑 7/10 漫畫書 -->
-            <div class="book-item">
-                <div class="book-info">
-                    <h3 class="book-title">📖 7/10日 生活學習日記</h3>
-                    <span class="book-meta">主題：身心靈的微小累積</span>
-                </div>
-                <a href="https://online.fliphtml5.com/HaoTing1981/gzri/" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
-            </div>
-
-            <!-- 👑 7/09 漫畫書 -->
-            <div class="book-item">
-                <div class="book-info">
-                    <h3 class="book-title">📖 7/09日 生活學習日記</h3>
-                    <span class="book-meta">主題：細節修得好，福報不會少</span>
-                </div>
-                <a href="https://online.fliphtml5.com/HaoTing1981/vwxm/" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
-            </div>
-
-            <!-- 👑 7/08 漫畫書 -->
-            <div class="book-item">
-                <div class="book-info">
-                    <h3 class="book-title">📖 7/08日 生活學習日記</h3>
-                    <span class="book-meta">主題：熱情互相感染、善意流動</span>
-                </div>
-                <a href="https://online.fliphtml5.com/HaoTing1981/qpcf/" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
-            </div>
-
-            <!-- 👑 7/07 漫畫書 -->
-            <div class="book-item">
-                <div class="book-info">
-                    <h3 class="book-title">📖 7/07日 生活學習日記</h3>
-                    <span class="book-meta">主題：心中自然有所拿捏</span>
-                </div>
-                <a href="https://online.fliphtml5.com/HaoTing1981/llwx/" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
-            </div>
-
-            <!-- 👑 7/06 漫畫書 -->
-            <div class="book-item">
-                <div class="book-info">
-                    <h3 class="book-title">📖 7/06日 生活學習日記</h3>
-                    <span class="book-meta">主題：累積信任，誠信至上</span>
-                </div>
-                <a href="https://online.fliphtml5.com/HaoTing1981/lrhx/" target="_blank" class="book-link-btn">開啟 3D 線上翻閱 ➔</a>
-            </div>
-
+    <!-- 👑 7/12 漫畫書 -->
+    <div class="book-item">
+        <div class="book-info">
+            <h3 class="book-title">📖 7/12日 生活學習日記</h3>
+            <span class="book-meta">主題：電子書製作中</span>
         </div>
+        <span class="book-link-btn" style="background:#c8c8c8;cursor:default;">
+            製作中
+        </span>
+    </div>
+
+    <!-- 👑 7/11 漫畫書 -->
+    <div class="book-item">
+        <div class="book-info">
+            <h3 class="book-title">📖 7/11日 生活學習日記</h3>
+            <span class="book-meta">主題：颱風中的感恩，完成「有欠」的人生功課</span>
+        </div>
+        <a href="https://online.fliphtml5.com/HaoTing1981/gwwd/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="book-link-btn">
+           開啟 3D 線上翻閱 ➔
+        </a>
+    </div>
+
+    <!-- 👑 7/10 漫畫書 -->
+    <div class="book-item">
+        <div class="book-info">
+            <h3 class="book-title">📖 7/10日 生活學習日記</h3>
+            <span class="book-meta">主題：身心靈的微小累積</span>
+        </div>
+        <a href="https://online.fliphtml5.com/HaoTing1981/gzri/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="book-link-btn">
+           開啟 3D 線上翻閱 ➔
+        </a>
+    </div>
+
+    <!-- 👑 7/09 漫畫書 -->
+    <div class="book-item">
+        <div class="book-info">
+            <h3 class="book-title">📖 7/09日 生活學習日記</h3>
+            <span class="book-meta">主題：細節修得好，福報不會少</span>
+        </div>
+        <a href="https://online.fliphtml5.com/HaoTing1981/vwxm/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="book-link-btn">
+           開啟 3D 線上翻閱 ➔
+        </a>
+    </div>
+
+    <!-- 👑 7/08 漫畫書 -->
+    <div class="book-item">
+        <div class="book-info">
+            <h3 class="book-title">📖 7/08日 生活學習日記</h3>
+            <span class="book-meta">主題：熱情互相感染、善意流動</span>
+        </div>
+        <a href="https://online.fliphtml5.com/HaoTing1981/qpcf/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="book-link-btn">
+           開啟 3D 線上翻閱 ➔
+        </a>
+    </div>
+
+    <!-- 👑 7/07 漫畫書 -->
+    <div class="book-item">
+        <div class="book-info">
+            <h3 class="book-title">📖 7/07日 生活學習日記</h3>
+            <span class="book-meta">主題：心中自然有所拿捏</span>
+        </div>
+        <a href="https://online.fliphtml5.com/HaoTing1981/llwx/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="book-link-btn">
+           開啟 3D 線上翻閱 ➔
+        </a>
+    </div>
+
+    <!-- 👑 7/06 漫畫書 -->
+    <div class="book-item">
+        <div class="book-info">
+            <h3 class="book-title">📖 7/06日 生活學習日記</h3>
+            <span class="book-meta">主題：累積信任，誠信至上</span>
+        </div>
+        <a href="https://online.fliphtml5.com/HaoTing1981/lrhx/"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="book-link-btn">
+           開啟 3D 線上翻閱 ➔
+        </a>
     </div>
 
 </div>
-
-</body>
-</html>
